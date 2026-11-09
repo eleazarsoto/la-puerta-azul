@@ -210,11 +210,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ev{background:var(--papel-claro);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease);animation:entra .7s var(--ease) both}
 .ev:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--sombra)}
 @keyframes entra{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.ev .arte{position:relative;height:170px;background:var(--lamina) url(img/papel.jpg) 0 0/600px;overflow:hidden}
-.ev .arte img{position:absolute;inset:-10% -12%;width:124%;height:120%;object-fit:cover;mix-blend-mode:multiply;transition:transform 1.4s var(--ease)}
-.ev:hover .arte img{transform:translateX(-4%) scale(1.05)}
-.ev .fecha{position:absolute;left:18px;bottom:12px;display:flex;align-items:flex-end;gap:10px;color:#262638}
-.ev .fecha b{font:400 60px/0.85 var(--f-display);color:#A05A3B}
+.ev .arte{position:relative;height:190px;background:#1E1F3D;overflow:hidden}
+.ev .arte canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ev .arte::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,rgba(30,31,61,.92) 0%,rgba(30,31,61,.55) 28%,rgba(30,31,61,0) 55%);pointer-events:none}
+
+.ev .fecha{position:absolute;left:18px;bottom:12px;z-index:1;display:flex;align-items:flex-end;gap:10px;color:#F3EEE4}
+.ev .fecha b{font:400 60px/0.85 var(--f-display);color:#E3A889}
 .ev .fecha span{font:500 13px/1.3 var(--f-ui);text-transform:uppercase;letter-spacing:.1em;padding-bottom:4px}
 .ev .cuerpo{padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
 .ev h3{font-size:1.65rem;line-height:1.15}
@@ -441,7 +442,7 @@ h1,h2,h3{text-wrap:balance}
 .link{display:inline-block;padding-block:6px;transition:color .2s,text-decoration-thickness .2s}
 .link:hover{text-decoration-thickness:2px}
 .ev{box-shadow:0 1px 2px rgba(30,31,61,.06)}
-.ev .arte{height:176px}
+.ev .arte{height:190px}
 .fila .acc{gap:8px}
 /* toast: oculto de verdad cuando no hay aviso */
 .toast{visibility:hidden;transition:transform .5s var(--ease),visibility 0s .5s}
@@ -865,22 +866,82 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 $$('.rv,#rama').forEach(el=>io.observe(el));
 
 /* agenda */
+/* ---- Agenda: gráficos generativos abstractos (escucha, comunidad, partitura, ruido) ---- */
+const ARTES=[];let artesLoop=false;
+const C={bg:'#1E1F3D',flor:'#C9C5E8',jac:'#A4ABD4',jac2:'#848DC5',papel:'#F3EEE4',teja:'#E3A889'};
+function rnd(seed){let x=Math.sin(seed*999)*10000;return()=>{x=Math.sin(x)*10000;return x-Math.floor(x)}}
+function flor(g,x,y,r,rot,fill,alpha){ // forma abstracta (sin flor): punto lleno o rombo de trazo
+  g.save();g.translate(x,y);g.rotate(rot);g.globalAlpha=alpha??1;
+  if(fill){g.fillStyle=fill;g.beginPath();g.arc(0,0,Math.max(1.5,r*.42),0,7);g.fill()}
+  else{const q=r*.75;g.beginPath();g.rect(-q,-q,q*2,q*2);g.stroke()}
+  g.restore()}
+function artesAgenda(){ARTES.length=0;
+  $$('#eventos canvas[data-arte]').forEach(cv=>{const g=cv.getContext('2d');const R=rnd(+cv.dataset.seed+cv.dataset.arte.length);
+    const A={cv,g,k:cv.dataset.arte,R,vis:true,w:0,h:0,pts:Array.from({length:40},()=>[R(),R(),R()])};
+    const size=()=>{const d=Math.min(devicePixelRatio||1,2);A.w=cv.clientWidth;A.h=cv.clientHeight;cv.width=A.w*d;cv.height=A.h*d;g.setTransform(d,0,0,d,0,0)};size();A.size=size;
+    new IntersectionObserver(e=>{A.vis=e[0].isIntersecting},{}).observe(cv);ARTES.push(A);dibujaArte(A,0)});
+  if(!artesLoop&&!RM){artesLoop=true;const loop=()=>{const t=performance.now()/1000;ARTES.forEach(A=>{if(A.vis)dibujaArte(A,t)});requestAnimationFrame(loop)};requestAnimationFrame(loop)}}
+addEventListener('resize',()=>ARTES.forEach(A=>{A.size();dibujaArte(A,performance.now()/1000)}));
+function dibujaArte(A,t){const {g,w,h,k,pts}=A;g.clearRect(0,0,w,h);g.lineCap='round';g.lineJoin='round';
+ if(k==='red'){ // escucha y comunidad: la flor al centro, oyentes conectados
+  const cx=w*.66,cy=h*.46;const N=pts.slice(0,16).map(([a,b],i)=>{const ang=i/16*Math.PI*2+a*.5,rr=(.28+b*.5)*Math.min(w*.42,h*.62);return[cx+Math.cos(ang)*rr*1.45,cy+Math.sin(ang)*rr*.95]});
+  g.strokeStyle=C.flor;g.lineWidth=.8;g.globalAlpha=.22;
+  N.forEach((p,i)=>{const q=N[(i+1)%16],r2=N[(i+5)%16];g.beginPath();g.moveTo(p[0],p[1]);g.lineTo(q[0],q[1]);g.stroke();if(i%3===0){g.beginPath();g.moveTo(p[0],p[1]);g.lineTo(r2[0],r2[1]);g.stroke()}});
+  g.globalAlpha=.35;N.forEach(p=>{g.beginPath();g.moveTo(cx,cy);g.lineTo(p[0],p[1]);g.stroke()});g.globalAlpha=1;
+  N.forEach((p,i)=>{const pulse=(t*.35+i/16)%1;const x=cx+(p[0]-cx)*pulse,y=cy+(p[1]-cy)*pulse;g.fillStyle=C.teja;g.globalAlpha=(1-pulse)*.9;g.beginPath();g.arc(x,y,1.8,0,7);g.fill()});
+  g.globalAlpha=1;N.forEach((p,i)=>{g.fillStyle=i%4?C.flor:C.papel;g.beginPath();g.arc(p[0],p[1],2.6+((i*7)%3),0,7);g.fill()});
+  g.strokeStyle=C.jac;g.lineWidth=1.4;const br=1+Math.sin(t*1.3)*.08;flor(g,cx,cy,22*br,t*.1,null);flor(g,cx,cy,12*br,-t*.15,C.jac2,.9);
+  g.fillStyle=C.papel;g.beginPath();g.arc(cx,cy,2.5,0,7);g.fill()}
+ else if(k==='partitura'){ // notación gráfica: pentagrama, rama de jacaranda como gesto
+  g.strokeStyle=C.papel;g.lineWidth=.7;g.globalAlpha=.16;for(let i=0;i<5;i++){const y=h*.22+i*h*.1;g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke()}g.globalAlpha=1;
+  g.strokeStyle=C.flor;g.lineWidth=1.6;g.beginPath();const pts2=[];for(let i=0;i<=60;i++){const u=i/60;const x=w*(.08+u*.9),y=h*(.5-.22*Math.sin(u*5+1.2)*Math.sin(u*2.2+t*.25)-.08*u);pts2.push([x,y]);i?g.lineTo(x,y):g.moveTo(x,y)}g.stroke();
+  [8,17,25,34,43,52].forEach((i,j)=>{const [x,y]=pts2[i];g.strokeStyle=C.flor;g.lineWidth=1;g.beginPath();g.moveTo(x,y);g.lineTo(x+6,y-14);g.stroke();
+    for(let c=0;c<4;c++)flor(g,x+6+Math.cos(c*1.7+j)*7,y-16+Math.sin(c*2.1)*6,4.5,c+t*.2*(j%2?1:-1),c%2?C.jac:C.flor,.9)});
+  for(let i=0;i<26;i++){const [a,b]=pts[i];const x=w*(.1+a*.85),hh=h*(.04+b*.18)*(.6+.4*Math.sin(t*2+i));g.strokeStyle=i%5?C.jac2:C.teja;g.globalAlpha=.55;g.lineWidth=1.2;g.beginPath();g.moveTo(x,h*.86-hh);g.lineTo(x,h*.86);g.stroke()}g.globalAlpha=1;
+  const px=(t*.08%1)*w;g.strokeStyle=C.teja;g.lineWidth=1;g.globalAlpha=.7;g.beginPath();g.moveTo(px,h*.12);g.lineTo(px,h*.9);g.stroke();g.globalAlpha=1;
+  g.strokeStyle=C.papel;g.lineWidth=1.2;g.beginPath();g.arc(w*.86,h*.2,10,Math.PI,0);g.stroke();g.fillStyle=C.papel;g.beginPath();g.arc(w*.86,h*.2-1,1.8,0,7);g.fill()}
+ else if(k==='secuencia'){ // educación: secuenciador de pasos, semillas y flores
+  const cols=16,rows=5,x0=w*.34,y0=h*.14,cw=(w*.62)/cols,ch=(h*.62)/rows;const step=Math.floor(t*4)%cols;
+  for(let c=0;c<cols;c++)for(let r=0;r<rows;r++){const on=pts[(c*rows+r)%40][0]<(.18+.1*(r%2));const x=x0+c*cw,y=y0+r*ch;
+    if(c===step){g.fillStyle='rgba(201,197,232,.10)';g.fillRect(x,y,cw-2,ch-2)}
+    g.strokeStyle=C.flor;g.globalAlpha=.18;g.lineWidth=.8;g.strokeRect(x+.5,y+.5,cw-3,ch-3);g.globalAlpha=1;
+    if(on){if(r===0||r===3)flor(g,x+cw/2-1,y+ch/2-1,Math.min(cw,ch)*.36*(c===step?1.35:1),t*.4+c,c===step?C.papel:C.jac,1);
+      else{g.fillStyle=c===step?C.teja:C.flor;g.beginPath();g.ellipse(x+cw/2-1,y+ch/2-1,cw*.18,ch*.12,.6,0,7);g.fill()}}}
+  g.strokeStyle=C.teja;g.lineWidth=1.4;g.beginPath();for(let i=0;i<=40;i++){const x=w*.04+i/40*w*.26,y=h*.3+Math.sin(i*.6+t*3)*h*.06*Math.sin(i/40*Math.PI);i?g.lineTo(x,y):g.moveTo(x,y)}g.stroke()}
+ else if(k==='album'){ // un disco completo: envolvente de todo el álbum, pistas y escuchas
+  const tracks=[.0,.13,.27,.36,.52,.63,.78,.9,1];const yc=h*.42;g.lineWidth=1.3;
+  for(let i=0;i<120;i++){const u=i/120;const ti=tracks.findIndex((v,j)=>u>=v&&u<tracks[j+1]);const lu=(u-tracks[ti])/(tracks[ti+1]-tracks[ti]);
+    if(lu<.04)continue;const env=Math.sin(lu*Math.PI)**.6;const a=h*.2*env*(.35+.65*Math.abs(Math.sin(i*1.7+ti)));const x=w*(.05+u*.9);
+    const pl=(t*.03)%1;g.strokeStyle=u<pl?C.flor:C.jac2;g.globalAlpha=u<pl?.95:.45;g.beginPath();g.moveTo(x,yc-a);g.lineTo(x,yc+a);g.stroke()}
+  g.globalAlpha=1;const pl=(t*.03)%1,px=w*(.05+pl*.9);g.strokeStyle=C.teja;g.lineWidth=1;g.beginPath();g.moveTo(px,h*.12);g.lineTo(px,h*.72);g.stroke();
+  flor(g,px,h*.1,6,t*.6,C.jac,1);
+  for(let i=0;i<9;i++){const x=w*(.42+i*.06),y=h*.82;g.fillStyle=i%3?C.flor:C.papel;g.globalAlpha=.85;g.beginPath();g.arc(x,y,3,0,7);g.fill();
+    g.globalAlpha=.25+.25*Math.sin(t*2+i);g.strokeStyle=C.flor;g.lineWidth=.8;g.beginPath();g.moveTo(x,y-5);g.lineTo(px,yc+h*.2);g.stroke()}g.globalAlpha=1}
+ else if(k==='ruido'){ // objetos sonoros: un racimo de jacaranda que se vuelve estática
+  const cx=w*.74,cy=h*.38;
+  for(let i=0;i<40;i++){const [a,b,c]=pts[i];const ang=a*Math.PI*2,rr=b*h*.3;const x=cx+Math.cos(ang)*rr*.8,y=cy+Math.sin(ang)*rr*.6+b*h*.12;
+    flor(g,x,y,4+c*5,ang+t*.3*(c-.5),c>.6?C.jac:C.flor,.85)}
+  const R2=rnd(Math.floor(t*12));for(let i=0;i<220;i++){const u=R2();const x=cx-u*w*.72+(R2()-.5)*10,y=cy+(R2()-.5)*h*(.2+u*.6);const s=2+R2()*3*(1-u*.4);
+    g.fillStyle=R2()<.15?C.teja:(R2()<.5?C.flor:C.jac2);g.globalAlpha=(1-u)*.85*R2();g.fillRect(Math.round(x/3)*3,Math.round(y/3)*3,s,s)}g.globalAlpha=1;
+  for(let i=0;i<3;i++){if(R2()<.5)continue;const y=h*(.1+R2()*.6);g.fillStyle=C.papel;g.globalAlpha=.25;g.fillRect(w*R2()*.4,y,w*(.2+R2()*.3),2)}g.globalAlpha=1}
+}
+
 const EV=[
- {f:'nido',d:'25',m:{es:'oct · dom',en:'Oct · Sun'},img:'motivo-nido',tag:{es:'Nido · sesión de escucha',en:'Nido · listening session'},t:{es:'Escuchar la tarde',en:'Listening to the afternoon'},p:{es:'Una selección de grabaciones de campo de la Ribera, escuchadas en silencio y conversadas después.',en:'Field recordings from around the lake, heard in silence and talked about afterwards.'},meta:{es:'12:00 h · Entrada libre',en:'12 pm · Free entry'}},
- {f:'concierto',d:'30',m:{es:'oct · vie',en:'Oct · Fri'},img:'motivo-partitura',tag:{es:'Puerta abierta · cierre de residencia',en:'Open door · residency closing'},t:{es:'Piano preparado y electrónica',en:'Prepared piano and electronics'},p:{es:'La residente presenta la obra que escribió en cuatro semanas detrás de la puerta.',en:'The resident presents the piece she wrote over four weeks behind the door.'},meta:{es:'19:00 h · Cupo 40',en:'7 pm · 40 seats'}},
- {f:'edu',d:'07',m:{es:'nov · sáb',en:'Nov · Sat'},img:'motivo-onda',tag:{es:'Educación',en:'Education'},t:{es:'Instrumentos de la Ribera',en:'Lakeside instruments'},p:{es:'Construimos instrumentos con semillas, carrizo y agua. Para niñas y niños de 7 a 12 años.',en:'We build instruments from seeds, reeds and water. For children aged 7 to 12.'},meta:{es:'11:00 h · Sin costo',en:'11 am · Free'}},
- {f:'nido',d:'08',m:{es:'nov · dom',en:'Nov · Sun'},img:'motivo-nido',tag:{es:'Nido · sesión de escucha',en:'Nido · listening session'},t:{es:'Un disco, de principio a fin',en:'One record, start to finish'},p:{es:'Escuchamos juntos un álbum completo, como se hacía antes: sin saltar canciones.',en:'We listen to a whole album together, the old way: no skipping.'},meta:{es:'12:00 h · Entrada libre',en:'12 pm · Free entry'}},
- {f:'concierto',d:'27',m:{es:'nov · vie',en:'Nov · Fri'},img:'motivo-ruido',tag:{es:'Puerta abierta · cierre de residencia',en:'Open door · residency closing'},t:{es:'Objetos sonoros',en:'Sound objects'},p:{es:'Esculturas que suenan, construidas durante la residencia con materiales de la región.',en:'Sounding sculptures built during the residency from local materials.'},meta:{es:'19:00 h · Cupo 40',en:'7 pm · 40 seats'}}
+ {f:'nido',d:'25',m:{es:'oct · dom',en:'Oct · Sun'},arte:'red',tag:{es:'Nido · sesión de escucha',en:'Nido · listening session'},t:{es:'Escuchar la tarde',en:'Listening to the afternoon'},p:{es:'Una selección de grabaciones de campo de la Ribera, escuchadas en silencio y conversadas después.',en:'Field recordings from around the lake, heard in silence and talked about afterwards.'},meta:{es:'12:00 h · Entrada libre',en:'12 pm · Free entry'}},
+ {f:'concierto',d:'30',m:{es:'oct · vie',en:'Oct · Fri'},arte:'partitura',tag:{es:'Puerta abierta · cierre de residencia',en:'Open door · residency closing'},t:{es:'Piano preparado y electrónica',en:'Prepared piano and electronics'},p:{es:'La residente presenta la obra que escribió en cuatro semanas detrás de la puerta.',en:'The resident presents the piece she wrote over four weeks behind the door.'},meta:{es:'19:00 h · Cupo 40',en:'7 pm · 40 seats'}},
+ {f:'edu',d:'07',m:{es:'nov · sáb',en:'Nov · Sat'},arte:'secuencia',tag:{es:'Educación',en:'Education'},t:{es:'Instrumentos de la Ribera',en:'Lakeside instruments'},p:{es:'Construimos instrumentos con semillas, carrizo y agua. Para niñas y niños de 7 a 12 años.',en:'We build instruments from seeds, reeds and water. For children aged 7 to 12.'},meta:{es:'11:00 h · Sin costo',en:'11 am · Free'}},
+ {f:'nido',d:'08',m:{es:'nov · dom',en:'Nov · Sun'},arte:'album',tag:{es:'Nido · sesión de escucha',en:'Nido · listening session'},t:{es:'Un disco, de principio a fin',en:'One record, start to finish'},p:{es:'Escuchamos juntos un álbum completo, como se hacía antes: sin saltar canciones.',en:'We listen to a whole album together, the old way: no skipping.'},meta:{es:'12:00 h · Entrada libre',en:'12 pm · Free entry'}},
+ {f:'concierto',d:'27',m:{es:'nov · vie',en:'Nov · Fri'},arte:'ruido',tag:{es:'Puerta abierta · cierre de residencia',en:'Open door · residency closing'},t:{es:'Objetos sonoros',en:'Sound objects'},p:{es:'Esculturas que suenan, construidas durante la residencia con materiales de la región.',en:'Sounding sculptures built during the residency from local materials.'},meta:{es:'19:00 h · Cupo 40',en:'7 pm · 40 seats'}}
 ];
 let filtro='todo';
 function renderEventos(){const box=$('#eventos');box.innerHTML='';
   EV.filter(e=>filtro==='todo'||e.f===filtro).forEach((e,i)=>{
     const msg=encodeURIComponent((lang==='es'?'Hola, quiero reservar para: ':'Hi, I would like to book: ')+e.t[lang]+' ('+e.d+' '+e.m[lang]+')');
     const a=document.createElement('article');a.className='ev';a.style.animationDelay=(i*.07)+'s';
-    a.innerHTML=`<div class="arte"><img src="img/${e.img}.webp" alt="" loading="lazy"><div class="fecha"><b>${e.d}</b><span>${e.m[lang]}</span></div></div>
+    a.innerHTML=`<div class="arte"><canvas data-arte="${e.arte}" data-seed="${e.d}" aria-hidden="true"></canvas><div class="fecha"><b>${e.d}</b><span>${e.m[lang]}</span></div></div>
     <div class="cuerpo"><span class="pill${e.f==='edu'?' fr':''}">${e.tag[lang]}</span><h3>${e.t[lang]}</h3><p>${e.p[lang]}</p>
     <div class="pie"><span class="dato">${e.meta[lang]}</span><a class="btn btn-p" href="https://wa.me/523321885263?text=${msg}" target="_blank" rel="noopener">${lang==='es'?'Reservar':'Book'}</a></div></div>`;
-    box.appendChild(a)})}
+    box.appendChild(a)});artesAgenda()}
 $$('.chip').forEach(c=>c.addEventListener('click',()=>{filtro=c.dataset.f;$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));renderEventos()}));
 setLang(lang);
 
@@ -970,6 +1031,7 @@ addEventListener('hashchange',()=>go(location.hash.slice(1),false));
 function sinViudas(root){root.querySelectorAll('h1,h2,h3,p,blockquote,.ofrece b').forEach(el=>{const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n,last=null;while(n=tw.nextNode()){if(n.textContent.trim())last=n}
   if(!last)return;const t=last.textContent.replace(/\s+$/,'');const i=t.lastIndexOf(' ');if(i>0&&t.length-i<14)last.textContent=t.slice(0,i)+'\u00a0'+t.slice(i+1)+last.textContent.slice(t.length)})}
 sinViudas(document);
+
 /* ---- scroll-driven scenes ---- */
 const cruce=$('#cruce'),tb=$('#tablas'),tx=tb.getContext('2d');
 let TW=0,TH=0,planks=[];
