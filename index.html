@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Puerta Azul · Residencia artística en Ajijic</title>
+<meta name="description" content="Residencia artística y creación sonora en Ajijic, Jalisco. Conciertos, sesiones de escucha, estudio de grabación y educación. Parte del Ecosistema Sensorial.">
+<meta name="theme-color" content="#848DC5">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icono-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Vista previa al compartir. Cuando tengan dominio, cambia https://lapuertaazul.mx por el dominio real -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puerta Azul">
+<meta property="og:title" content="La Puerta Azul · Espacio y tiempo para crear">
+<meta property="og:description" content="Residencia artística y creación sonora en Ajijic, Jalisco. Parte del Ecosistema Sensorial.">
+<meta property="og:image" content="https://lapuertaazul.mx/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Figtree:wght@400;500;600&family=Marcellus&display=swap">
+<link rel="preload" as="image" href="img/isotipo-noche.svg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: an editorial walk through the house — hero with the façade, a pinned "cross the door" scene,
+   a horizontal gallery of programs, then agenda, residency, studio, education and visit. Paper first. */
+:root{
+  /* Fondo: Pantone 17-3930 TCX Jacaranda. Texto en tinta/noche (≥4.6:1); blanco sólo en display grande (3.2:1). */
+  --fondo:#848DC5; --fondo-hondo:#7A83BF;
+  --sobre:#262638; --sobre-suave:#23244F; --titulo:#1E1F3D; --blanco:#FFFFFF; --linea-f:rgba(30,31,61,.26);
+  --papel:#F6F1E7; --papel-claro:#FCFAF5;
+  --tinta:#262638; --tinta-suave:#5B5868; --profundo:#3F4180;
+  --noche:#1E1F3D; --flor:#C9C5E8; --teja:#A05A3B; --fronda:#5E7349; --linea:#D8CFC0; --borde:#8F88A0;
+  --lamina:#F6F1E7;
+  --banda:#1E1F3D; --banda-tinta:#F3EEE4; --banda-suave:#BDB8CE; --banda-linea:#3A3C66;
+  --velo:rgba(132,141,197,.86);
+  --sombra:0 1px 2px rgba(30,31,61,.12),0 22px 48px rgba(30,31,61,.22);
+  --f-display:"Marcellus","Optima","Candara",Georgia,serif;
+  --f-texto:"EB Garamond",Garamond,"Times New Roman",serif;
+  --f-ui:"Figtree","Segoe UI",system-ui,sans-serif;
+  --gut:max(16px, env(safe-area-inset-left,0px));
+  --gutr:max(16px, env(safe-area-inset-right,0px));
+  --max:1320px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:light;
+}
+/* superficies de papel: re-mapean los tokens de texto */
+.ev,.suscribe,.sello{--sobre:#262638;--sobre-suave:#5B5868;--titulo:#3F4180;--linea-f:#D8CFC0;color:var(--sobre)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--fondo);color:var(--sobre);font-family:var(--f-texto);font-size:18px;line-height:1.6;}
+.papelado{position:fixed;inset:0;pointer-events:none;z-index:0;background:url(img/papel.jpg) 0 0/600px;mix-blend-mode:multiply;opacity:.42}
+main,footer,header{position:relative;z-index:1}
+main{overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--noche);outline-offset:3px;border-radius:2px}
+::selection{background:var(--noche);color:var(--papel)}
+
+/* language */
+html[lang="en"] .es{display:none!important}
+html:not([lang="en"]) .en{display:none!important}
+
+
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:var(--gut);padding-right:var(--gutr)}
+@media(min-width:900px){.wrap{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+
+/* type */
+.eyebrow{font:600 13px/1.4 var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--titulo)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;letter-spacing:.005em;text-wrap:balance;margin:0;color:var(--titulo)}
+h2{font-size:clamp(2.3rem,5.4vw,4.4rem);line-height:1.04}
+h3{font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.15}
+em.g{font-family:var(--f-texto);font-style:italic;font-weight:400}
+p{margin:0;text-wrap:pretty}
+.entrada{font-size:clamp(1.2rem,1.9vw,1.45rem);line-height:1.5;max-width:34em}
+.en-sub{font-style:italic;color:var(--sobre-suave)}
+.dato{font:500 15px/1.45 var(--f-ui);color:var(--sobre-suave)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 15px/20px var(--f-ui);letter-spacing:.01em;text-decoration:none;border-radius:6px;padding:14px 22px;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,transform .35s var(--ease)}
+.btn-p{background:var(--noche);color:var(--papel)}
+.btn-p:hover{background:var(--papel);color:var(--noche)}
+.btn-s{border-color:var(--titulo);color:var(--titulo);background:transparent}
+.btn-s:hover{background:rgba(255,255,255,.3)}
+.btn svg{width:18px;height:18px;flex:none}
+.link{font:600 15px/20px var(--f-ui);color:var(--titulo);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--fondo)}
+.top{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:50;transition:transform .5s var(--ease),background .4s,box-shadow .4s}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:14px}
+.top.solid{background:var(--velo);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 var(--linea-f)}
+.top.hide{transform:translateY(-110%)}
+.en-sen .top{background:var(--velo);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 var(--linea-f)}
+.top .logo img{height:54px;width:auto}
+.nav{display:flex;align-items:center;gap:26px;font:500 15px/22px var(--f-ui)}
+.nav a{text-decoration:none;color:var(--sobre);position:relative}
+.nav a.btn-p{color:var(--papel)}
+.nav a.btn-p:hover{color:var(--noche)}
+.dd{position:relative}
+.dd-b{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:8px 2px;font:500 15px/22px var(--f-ui);color:var(--sobre);cursor:pointer}
+.dd-b svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .35s var(--ease)}
+.dd.open .dd-b svg{transform:rotate(180deg)}
+.dd-p{position:absolute;top:calc(100% + 10px);left:-18px;width:320px;background:var(--noche);color:var(--papel);border-radius:6px;padding:10px;box-shadow:var(--sombra);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s,transform .4s var(--ease),visibility .3s}
+.dd-p.ancho{width:560px;grid-template-columns:1fr 1fr;left:-160px}
+.dd.open .dd-p{opacity:1;visibility:visible;transform:none}
+.dd-p a{display:block;padding:10px 12px;border-radius:4px;text-decoration:none;color:#BDB8CE;font:400 13px/1.4 var(--f-ui)}
+.dd-p a b{display:block;font:400 17px/1.3 var(--f-display);color:var(--papel);margin-bottom:2px}
+.dd-p a:hover,.dd-p a:focus-visible{background:#292B52}
+.dd-p a:focus-visible{outline-color:var(--flor)}
+.nav a.u::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a.u:hover::after{transform:scaleX(1);transform-origin:left}
+.lang{font:600 13px/1 var(--f-ui);letter-spacing:.08em;border:1px solid var(--titulo);border-radius:999px;padding:7px 11px;background:transparent;color:var(--sobre);cursor:pointer}
+.lang b{color:var(--titulo)}
+.lang span{opacity:.5}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--titulo);border-radius:999px;background:transparent;color:var(--titulo);cursor:pointer;align-items:center;justify-content:center}
+.burger i{display:block;width:18px;height:1.5px;background:currentColor;position:relative}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .35s}
+.burger i::before{top:-6px}.burger i::after{top:6px}
+@media(max-width:980px){.nav .dd,.nav .btn{display:none}.burger{display:inline-flex}.top .logo img{height:38px}}
+
+/* mobile menu */
+.menu{position:fixed;inset:0;z-index:70;background:var(--noche);color:var(--papel);display:flex;flex-direction:column;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 18px) var(--gutr) calc(env(safe-area-inset-bottom,0px) + 28px) var(--gut);clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease);visibility:hidden}
+.menu.open{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible}
+.menu .x{align-self:flex-end;width:44px;height:44px;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;font:400 24px/1 var(--f-ui);cursor:pointer}
+.menu-g{display:flex;flex-direction:column;gap:28px;overflow-y:auto;padding-block:12px}
+.menu nav{display:flex;flex-direction:column;gap:4px}
+.mg-t{font:600 12px/1.3 var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:#BDB8CE;margin-bottom:6px}
+.mg-eco a{font-size:clamp(1.3rem,6vw,1.7rem)!important}
+.menu nav a{font:400 clamp(1.9rem,9vw,2.8rem)/1.15 var(--f-display);text-decoration:none;color:inherit;transform:translateY(30px);opacity:0;transition:transform .7s var(--ease),opacity .7s}
+.menu.open nav a{transform:none;opacity:1}
+.menu.open nav a:nth-child(2){transition-delay:.06s}.menu.open nav a:nth-child(3){transition-delay:.12s}.menu.open nav a:nth-child(4){transition-delay:.18s}.menu.open nav a:nth-child(5){transition-delay:.24s}.menu.open nav a:nth-child(6){transition-delay:.3s}
+.menu .pie{font:500 15px/1.6 var(--f-ui)}
+
+/* hero */
+.hero{position:relative;padding-top:calc(env(safe-area-inset-top,0px) + 108px);padding-bottom:40px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero-txt{display:flex;flex-direction:column;gap:26px;position:relative;z-index:3}
+.hero h1{font-size:clamp(3.1rem,7.4vw,6.9rem);line-height:.98;color:var(--titulo)}
+.hero h1 .w{display:inline-block;animation:tinta 1.4s var(--ease) both}
+.hero h1 em{color:var(--blanco)}
+@keyframes tinta{from{opacity:0;filter:blur(14px);transform:translateY(.25em)}to{opacity:1;filter:none;transform:none}}
+.hero .entrada,.hero .ctas,.hero .eyebrow,.proximo{animation:sube 1.2s var(--ease) both}
+@keyframes sube{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.ctas{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.fachada{position:relative;padding-block:12px}
+.fachada .img{position:relative;aspect-ratio:1318/976;animation:graba 1.8s .25s var(--ease) both}
+@keyframes graba{from{clip-path:inset(0 0 100% 0);transform:translateY(-14px)}to{clip-path:inset(0 0 0 0);transform:none}}
+.fachada img{width:100%;height:100%;object-fit:contain}
+.proximo{display:flex;align-items:center;gap:14px;text-decoration:none;border-top:1px solid var(--linea-f);padding-top:18px;max-width:30em}
+.proximo .pulso{width:10px;height:10px;border-radius:50%;background:var(--blanco);box-shadow:0 0 0 0 var(--blanco);animation:pulso 2.4s infinite;flex:none}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}80%,100%{box-shadow:0 0 0 12px transparent}}
+.proximo b{font:500 15px/1.4 var(--f-ui);color:var(--sobre)}
+.proximo span{display:block}
+.hero-pie{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;padding-top:16px;border-top:1px solid var(--linea-f)}
+.bajar{display:inline-flex;gap:10px;align-items:center;text-decoration:none}
+.bajar i{width:1px;height:28px;background:var(--linea-f);position:relative;overflow:hidden;display:block}
+.bajar i::after{content:"";position:absolute;left:0;top:-100%;width:1px;height:100%;background:var(--noche);animation:gota 2s infinite var(--ease)}
+@keyframes gota{to{top:100%}}
+@media(max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .fachada{order:-1}
+  .hero{padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+}
+
+/* cruzar la puerta */
+.divisor{position:relative;height:clamp(110px,14vw,170px);margin-block:clamp(24px,4vw,48px)}
+#tablas{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* section rhythm */
+.sec{padding-block:clamp(72px,11vw,150px)}
+.sec-head{display:flex;flex-direction:column;gap:18px;max-width:46rem;margin-bottom:clamp(36px,5vw,64px)}
+
+/* programas horizontal */
+.prog{position:relative}
+.prog-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.prog-pin .sec-head{margin-bottom:28px}
+.pista{display:flex;gap:clamp(24px,3vw,48px);padding-left:max(48px,env(safe-area-inset-left,0px),calc((100vw - var(--max))/2 + 48px));padding-right:12vw;will-change:transform}
+.panel{flex:none;width:min(82vw,1040px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center}
+.lam{position:relative;background:var(--lamina) url(img/papel.jpg) 0 0/600px;border-radius:6px;box-shadow:var(--sombra);aspect-ratio:16/10;overflow:hidden}
+.lam img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform 1.2s var(--ease)}
+.panel:hover .lam img{transform:scale(1.04) rotate(-.6deg)}
+.lam .cap{position:absolute;left:14px;bottom:12px;font:500 12px/1 var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:#3F4180;background:rgba(252,250,245,.9);padding:6px 10px;border-radius:999px}
+.panel .txt{display:flex;flex-direction:column;gap:16px;min-width:0}
+.pill{align-self:flex-start;font:500 13px/18px var(--f-ui);background:var(--flor);color:var(--tinta);border-radius:999px;padding:4px 12px}
+.pill.fr{background:var(--papel);color:var(--fronda)}
+.panel h3{font-size:clamp(2rem,3.6vw,3rem)}
+.prog-barra{display:flex;gap:6px;margin-top:34px;padding-left:max(48px,env(safe-area-inset-left,0px),calc((100vw - var(--max))/2 + 48px));padding-right:48px}
+.prog-barra button{flex:1;max-width:200px;text-align:left;background:none;border:0;border-top:2px solid var(--linea-f);padding:10px 0 0;font:500 13px/1.3 var(--f-ui);color:var(--sobre-suave);cursor:pointer;position:relative}
+.prog-barra button::before{content:"";position:absolute;left:0;top:-2px;height:2px;width:var(--p,0%);background:var(--noche)}
+.prog-barra button.on{color:var(--titulo)}
+@media(max-width:820px){
+  .prog{height:auto!important}
+  .prog-pin{position:relative;height:auto;overflow:visible;padding-block:80px 40px}
+  .pista{flex-direction:column;transform:none!important;padding-left:var(--gut);padding-right:var(--gutr);gap:56px}
+  .panel{width:100%;grid-template-columns:1fr}
+  .prog-barra{display:none}
+}
+
+/* agenda */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.chip{font:500 14px/20px var(--f-ui);border:1px solid var(--titulo);background:transparent;color:var(--sobre);border-radius:999px;padding:8px 16px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.chip[aria-pressed="true"]{background:var(--noche);border-color:var(--noche);color:var(--papel)}
+.eventos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(18px,2.4vw,32px)}
+.ev{background:var(--papel-claro);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease);animation:entra .7s var(--ease) both}
+.ev:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--sombra)}
+@keyframes entra{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ev .arte{position:relative;height:170px;background:var(--lamina) url(img/papel.jpg) 0 0/600px;overflow:hidden}
+.ev .arte img{position:absolute;inset:-10% -12%;width:124%;height:120%;object-fit:cover;mix-blend-mode:multiply;transition:transform 1.4s var(--ease)}
+.ev:hover .arte img{transform:translateX(-4%) scale(1.05)}
+.ev .fecha{position:absolute;left:18px;bottom:12px;display:flex;align-items:flex-end;gap:10px;color:#262638}
+.ev .fecha b{font:400 60px/0.85 var(--f-display);color:#A05A3B}
+.ev .fecha span{font:500 13px/1.3 var(--f-ui);text-transform:uppercase;letter-spacing:.1em;padding-bottom:4px}
+.ev .cuerpo{padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.ev h3{font-size:1.65rem;line-height:1.15}
+.ev p{font-size:17px;line-height:1.5}
+.ev .pie{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--linea-f);padding-top:14px}
+.ev .btn{padding:9px 14px;font-size:14px}
+.nota{font:500 13px/1.5 var(--f-ui);color:var(--sobre-suave);margin-top:22px}
+
+/* cita */
+.cita{padding-block:clamp(90px,14vw,190px)}
+.cita blockquote{margin:0;font:400 clamp(2rem,4.6vw,4rem)/1.18 var(--f-display);color:var(--titulo);max-width:22em;text-wrap:balance}
+.cita blockquote .pal{transition:opacity .3s}
+.cita blockquote em{font-family:var(--f-texto);font-style:italic;color:var(--blanco)}
+.cita .firma{margin-top:28px}
+
+/* residencia */
+.res .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.res .rama{position:relative;aspect-ratio:5/4;max-width:100%}
+.res .rama canvas{position:absolute;inset:0;width:100%;height:100%;display:block;clip-path:inset(0 100% 0 0);transition:clip-path 1.8s var(--ease)}
+.res .rama.vis canvas{clip-path:inset(0 0 0 0)}
+.ofrece{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 32px;margin:34px 0}
+.ofrece div{border-top:1px solid var(--linea-f);padding-top:14px}
+.ofrece b{display:block;font:400 1.5rem/1.2 var(--f-display);color:var(--titulo);margin-bottom:6px}
+.ofrece p{font-size:17px;line-height:1.5}
+@media(max-width:820px){.res .wrap{grid-template-columns:1fr}.res .rama{order:2}.ofrece{grid-template-columns:1fr}}
+
+/* estudio (banda) */
+.estudio{background:var(--banda);color:var(--banda-tinta)}
+.estudio h2{color:var(--banda-tinta)}
+.estudio .eyebrow{color:#E3A889}
+.estudio p{color:var(--banda-suave)}
+.estudio .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.osc{position:relative;aspect-ratio:16/11;border-radius:6px;border:1px solid var(--banda-linea);overflow:hidden}
+.osc canvas{position:absolute;inset:0;width:100%;height:100%}
+/*lam2 retirada*/.x-lam2{position:absolute;right:-6%;top:-8%;width:56%;transform:rotate(4deg);background:#F6F1E7 url(img/papel.jpg) 0 0/600px;border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.4);aspect-ratio:16/10;overflow:hidden}
+.x-lam2 img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.escucha{display:inline-flex;align-items:center;gap:14px;background:#C9C5E8;color:#1E1F3D;border:0;border-radius:999px;padding:10px 22px 10px 10px;font:600 15px/1 var(--f-ui);cursor:pointer;margin-top:28px;transition:transform .4s var(--ease)}
+.escucha:hover{transform:scale(1.03)}
+.escucha i{width:40px;height:40px;border-radius:50%;background:#1E1F3D;display:grid;place-items:center}
+.escucha i svg{width:16px;height:16px;fill:#C9C5E8}
+.escucha .pz{display:none}
+.escucha[aria-pressed="true"] .pl{display:none}.escucha[aria-pressed="true"] .pz{display:block}
+.estudio .peq{font:400 13px/1.5 var(--f-ui);color:var(--banda-suave);margin-top:12px}
+.estudio :focus-visible{outline-color:#C9C5E8}
+@media(max-width:820px){.estudio .wrap{grid-template-columns:1fr}}
+
+/* educación */
+.edu .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.edu .lav{position:relative}
+.edu .lav .lam{aspect-ratio:5/4}
+.edu .lav .lam img{object-fit:cover}
+.edu .lav .sello{position:absolute;left:-18px;bottom:-22px;background:var(--papel-claro);border-radius:6px;padding:16px 18px;box-shadow:var(--sombra);max-width:270px}
+.edu .lav .sello b{display:block;font:400 1.3rem/1.2 var(--f-display);color:var(--fronda)}
+@media(max-width:820px){.edu .wrap{grid-template-columns:1fr}.edu .lav .sello{left:12px}}
+
+/* visita */
+.visita .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px)}
+.dir{font:400 clamp(1.6rem,3vw,2.3rem)/1.25 var(--f-display);color:var(--sobre);margin:20px 0 22px}
+.contacto{display:flex;flex-direction:column}
+.fila{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 16px;padding:18px 0;border-top:1px solid var(--linea-f)}
+.fila:last-child{border-bottom:1px solid var(--linea-f)}
+.fila small{display:block;font:500 12px/1.3 var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--sobre-suave)}
+.fila .v{font:500 clamp(1rem,1.7vw,1.15rem)/1.4 var(--f-ui);color:var(--sobre);user-select:all;overflow-wrap:anywhere}
+.fila .acc{display:flex;gap:8px}
+.mini{font:600 13px/1 var(--f-ui);border:1px solid var(--titulo);background:transparent;color:var(--titulo);border-radius:999px;padding:9px 13px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.mini:hover{background:rgba(255,255,255,.3)}
+.suscribe{margin-top:40px;background:var(--papel-claro);border-radius:6px;padding:26px}
+.suscribe h3{font-size:1.6rem}
+.suscribe .btn-p{background:var(--noche);color:var(--papel)}
+.suscribe form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.suscribe input{flex:1 1 220px;min-width:0;font:400 16px/1 var(--f-ui);padding:14px 16px;border:1px solid var(--borde);border-radius:2px;background:var(--papel);color:var(--tinta)}
+.suscribe input:focus-visible{outline:2px solid var(--noche);outline-offset:2px}
+@media(max-width:820px){.visita .wrap{grid-template-columns:1fr}}
+
+
+/* ecosistema */
+.eco-lista{display:flex;flex-direction:column;border-top:1px solid var(--linea-f)}
+.eco-i{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:10px 40px;align-items:baseline;padding-block:26px;border-bottom:1px solid var(--linea-f);scroll-margin-top:90px}
+.eco-i h3{font-size:clamp(1.7rem,3.2vw,2.5rem);transition:transform .5s var(--ease)}
+.eco-i:hover h3{transform:translateX(8px)}
+.eco-i p{font-size:clamp(1.05rem,1.6vw,1.25rem)}
+.eco-i .redes{grid-column:2;display:flex;gap:8px;flex-wrap:wrap}
+.eco-i .mini{display:inline-flex;align-items:center;gap:6px}
+.eco-i .mini svg{width:15px;height:15px}
+.eco-radio{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start;padding-block:34px}
+.eco-txt{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.radio{background:var(--noche);color:var(--papel);border-radius:6px;padding:18px;box-shadow:var(--sombra);display:flex;flex-direction:column;gap:14px;min-width:0}
+.radio .dato{color:#BDB8CE}
+.radio-top{display:flex;align-items:center;gap:10px}
+.vivo{width:8px;height:8px;border-radius:50%;background:#E3A889;animation:pulso 2.4s infinite}
+.radio-pl{min-height:64px;border-radius:4px;overflow:hidden;background:#292B52}
+.radio-pl iframe{display:block;width:100%;height:120px;border:0}
+.radio-play{display:flex;align-items:center;gap:14px;width:100%;height:64px;padding:0 14px;background:none;border:0;color:var(--papel);cursor:pointer;text-align:left}
+.radio-play i{width:40px;height:40px;border-radius:50%;background:#C9C5E8;display:grid;place-items:center;flex:none;transition:transform .35s var(--ease)}
+.radio-play:hover i{transform:scale(1.08)}
+.radio-play i svg{width:15px;height:15px;fill:#1E1F3D}
+.radio-play b{display:block;font:400 18px/1.2 var(--f-display)}
+.radio-play span span{font:500 13px/1.3 var(--f-ui);color:#BDB8CE}
+.eps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.ep{width:100%;text-align:left;background:none;border:1px solid #3A3C66;border-radius:4px;padding:8px 10px;color:var(--papel);cursor:pointer;transition:background .25s,border-color .25s}
+.ep b{display:block;font:500 13px/1.3 var(--f-ui)}
+.ep span{font:400 12px/1.3 var(--f-ui);color:#BDB8CE}
+.ep:hover{background:#292B52}
+.ep[aria-pressed="true"]{border-color:#C9C5E8;background:#292B52}
+.radio :focus-visible{outline-color:#C9C5E8}
+.radio-nota{font:400 12px/1.4 var(--f-ui);color:#BDB8CE}
+@media(max-width:820px){.eco-i,.eco-radio{grid-template-columns:1fr}.eco-i .redes{grid-column:1}.eps{grid-template-columns:1fr}}
+
+
+/* ---- página Ecosistema Sensorial ---- */
+[id]{scroll-margin-top:84px}
+.oscuro{background:var(--noche);color:var(--papel);--sobre:#F3EEE4;--sobre-suave:#BDB8CE;--titulo:#F3EEE4;--linea-f:#3A3C66}
+.oscuro .eyebrow{color:#E3A889}
+.oscuro .btn-p{background:#C9C5E8;color:#1E1F3D}
+.oscuro :focus-visible{outline-color:#C9C5E8}
+.sen-hero{position:relative;overflow:hidden;padding-top:calc(env(safe-area-inset-top,0px) + 150px);padding-bottom:clamp(170px,20vw,240px)}
+.sen-hero .wrap{display:flex;flex-direction:column;gap:24px;position:relative;z-index:1}
+.sen-hero h1{font-size:clamp(3.2rem,9vw,8rem);line-height:.95;color:var(--papel)}
+.sen-hero h1 em{color:#A4ABD4}
+.sen-hero .entrada{color:#BDB8CE;max-width:36em}
+.sen-idx{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.chip-l{font:500 14px/20px var(--f-ui);border:1px solid #5A5C8E;color:var(--papel);border-radius:999px;padding:8px 16px;text-decoration:none;transition:background .25s,border-color .25s}
+.chip-l:hover{background:#292B52;border-color:#C9C5E8}
+.ecu{position:absolute;left:0;right:0;bottom:0;height:clamp(110px,13vw,170px);display:flex;align-items:center;gap:clamp(6px,1vw,14px);padding-inline:clamp(10px,2vw,24px)}
+.ecu i{flex:1;height:var(--h);background:#848DC5;border-radius:99px;opacity:.85;animation:ecu 1.4s var(--d) ease-in-out infinite alternate;transform-origin:center}
+@keyframes ecu{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
+.sen-sec{padding-block:clamp(80px,11vw,150px)}
+.sen-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,10fr);gap:24px clamp(24px,4vw,64px);align-items:start}
+.sen-n{font:400 clamp(2.6rem,5vw,4.4rem)/1 var(--f-display);color:var(--titulo);opacity:.55;font-variant-numeric:tabular-nums}
+.sen-n span{font:500 14px/1 var(--f-ui);letter-spacing:.1em;margin-left:6px;opacity:.8}
+.sen-txt{display:flex;flex-direction:column;gap:20px;min-width:0}
+.sen-txt h2{font-size:clamp(2.8rem,7vw,6.2rem);line-height:1}
+.sen-txt .entrada{font-size:clamp(1.3rem,2.4vw,1.9rem);max-width:26em}
+.sen-extra{display:flex;flex-direction:column;gap:14px;align-items:flex-start;margin-top:10px;max-width:760px;width:100%}
+.sen-extra .radio{width:100%}
+.oscuro .radio{background:#292B52}
+.oscuro .radio-pl,.oscuro .ep:hover,.oscuro .ep[aria-pressed="true"]{background:#33356A}
+.sen-extra .redes{display:flex;gap:8px;flex-wrap:wrap}
+.sen-extra .mini{display:inline-flex;align-items:center;gap:6px}
+.sen-extra .mini svg{width:15px;height:15px}
+.teaser{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;border-top:1px solid var(--linea-f);border-bottom:1px solid var(--linea-f);padding-block:48px}
+.teaser > div{display:flex;flex-direction:column;gap:16px;max-width:44rem}
+.dd-todo{grid-column:1/-1;border-bottom:1px solid #3A3C66;border-radius:4px 4px 0 0!important}
+@media(max-width:820px){.sen-grid{grid-template-columns:1fr}.sen-n{font-size:2rem}}
+@media (prefers-reduced-motion: reduce){.ecu i{animation:none}}
+
+/* footer */
+footer{background:var(--noche);color:var(--papel);padding-block:72px calc(env(safe-area-inset-bottom,0px) + 36px)}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:48px 72px}
+footer .lv img{width:190px}
+.fcols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.fcols h4{font:500 12px/1.3 var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:#BDB8CE;margin:0 0 12px}
+.fcols a,.fcols p{display:block;font:500 15px/1.9 var(--f-ui);text-decoration:none;color:var(--papel)}
+.fcols a:hover{color:var(--flor);text-decoration:underline;text-underline-offset:4px}
+.legal{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid #3A3C66;padding-top:22px;font:400 13px/1.5 var(--f-ui);color:#BDB8CE}
+@media(max-width:820px){footer .wrap{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}}
+
+/* floating whatsapp + toast */
+.wa{position:fixed;right:calc(env(safe-area-inset-right,0px) + 18px);bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:40;display:flex;align-items:center;gap:10px;background:var(--noche);color:var(--papel);text-decoration:none;border-radius:999px;padding:12px 18px 12px 14px;font:600 14px/1 var(--f-ui);box-shadow:var(--sombra);transition:transform .4s var(--ease)}
+.wa:hover{transform:translateY(-3px)}
+.wa svg{width:22px;height:22px}
+@media(max-width:560px){.wa .t{display:none}.wa{padding:14px}}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);transform:translate(-50%,140%);z-index:80;background:var(--noche);color:var(--papel);font:500 15px/1.3 var(--f-ui);padding:13px 20px;border-radius:6px;transition:transform .5s var(--ease);max-width:calc(100vw - 32px)}
+.toast.on{transform:translate(-50%,0)}
+
+/* reveal: transform only, content always readable */
+.rv{transform:translateY(34px);transition:transform 1.1s var(--ease)}
+.rv.vis{transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .fachada .img{clip-path:none}
+  .prog{height:auto!important}
+  .prog-pin{position:relative;height:auto;overflow:visible;padding-block:80px}
+  .pista{flex-direction:column;transform:none!important;padding-right:var(--gutr)}
+  .panel{width:100%}
+  .prog-barra{display:none}
+  .res .rama canvas{clip-path:none}
+  .rv{transform:none}
+}
+
+/* =====================================================================
+   CAPA DE PULIDO · acabado final (no cambia diseño, solo ejecución)
+   ===================================================================== */
+:root{--sec-y:128px;--sec-y-m:88px;--ctrl:48px;--ctrl-s:40px;--tap:44px;--medida:65ch}
+/* ritmo de secciones: un solo sistema */
+.sec,.sen-sec{padding-block:var(--sec-y)}
+.cita{padding-block:var(--sec-y)}
+.hero{padding-bottom:64px}
+.divisor{margin-block:0;height:clamp(96px,11vw,140px)}
+.divisor + .sec{padding-top:calc(var(--sec-y) * .6)}
+.sen-hero{padding-top:calc(env(safe-area-inset-top,0px) + 176px);padding-bottom:clamp(170px,18vw,220px)}
+.eco-teaser{padding-block:calc(var(--sec-y) * .75)}
+@media(max-width:820px){
+  .sec,.sen-sec,.cita{padding-block:var(--sec-y-m)}
+  .divisor + .sec{padding-top:calc(var(--sec-y-m) * .6)}
+  .eco-teaser{padding-block:calc(var(--sec-y-m) * .75)}
+  .sen-hero{padding-top:calc(env(safe-area-inset-top,0px) + 112px);padding-bottom:150px}
+  .hero{padding-bottom:48px}
+}
+/* tipografía: medida de lectura y finales sin palabra suelta */
+.entrada,.sec-head p,.res p,.edu p,.estudio p,.sen-txt .entrada,.dentro p{max-width:var(--medida)}
+.sec-head .entrada{max-width:52ch}
+.estudio .peq{max-width:56ch;line-height:1.55}
+h1,h2,h3{text-wrap:balance}
+.eyebrow{line-height:1.4}
+.ofrece p{font-size:17px;line-height:1.55;color:var(--sobre)}
+.ofrece b{margin-bottom:8px}
+.dato{line-height:1.5}
+/* controles: alturas y estados uniformes */
+.btn{min-height:var(--ctrl);padding:0 22px;justify-content:center;transition:background .25s,color .25s,border-color .25s,transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn:active,.mini:active,.chip:active,.chip-l:active,.lang:active,.escucha:active,.ep:active{transform:scale(.97)}
+.btn-p:hover{box-shadow:0 8px 22px rgba(30,31,61,.18)}
+.ev .btn{min-height:var(--ctrl-s);padding:0 16px;font-size:14px}
+.mini{min-height:36px;padding:0 14px;display:inline-flex;align-items:center;gap:6px;transition:background .25s,transform .25s var(--ease)}
+.chip,.chip-l{min-height:var(--ctrl-s);display:inline-flex;align-items:center;padding:0 16px}
+.chip:hover{background:rgba(255,255,255,.28)}
+.chip[aria-pressed="true"]:hover{background:var(--noche)}
+.lang{min-height:36px;padding:0 13px;transition:background .25s}
+.lang:hover{background:rgba(255,255,255,.28)}
+.dd-b{min-height:var(--tap)}
+.suscribe input{height:var(--ctrl);padding:0 16px;border-radius:6px}
+.suscribe form .btn{height:var(--ctrl)}
+.link{display:inline-block;padding-block:6px;transition:color .2s,text-decoration-thickness .2s}
+.link:hover{text-decoration-thickness:2px}
+.ev{box-shadow:0 1px 2px rgba(30,31,61,.06)}
+.ev .arte{height:176px}
+.fila .acc{gap:8px}
+/* toast: oculto de verdad cuando no hay aviso */
+.toast{visibility:hidden;transition:transform .5s var(--ease),visibility 0s .5s}
+.toast.on{visibility:visible;transition:transform .5s var(--ease),visibility 0s}
+/* estudio: el osciloscopio ocupa su panel limpio */
+.osc{box-shadow:inset 0 0 0 1px var(--banda-linea);border:0}
+/* sensorial: número alineado con el nombre y legible */
+.sen-grid{align-items:baseline}
+.sen-n{opacity:.8;color:color-mix(in srgb,var(--titulo) 72%,transparent)}
+.oscuro .sen-n{color:#A4ABD4}
+.sen-txt{gap:18px}
+/* radio: reproductor listo y lista de programas */
+.radio-pl{min-height:120px}
+.radio-pl iframe{height:120px}
+.radio-ahora{font:500 13px/1.4 var(--f-ui);color:#BDB8CE}
+.radio-ahora b{color:#F3EEE4;font-weight:600}
+.eps{max-height:236px;overflow-y:auto;padding-right:4px;scrollbar-width:thin}
+.ep{min-height:var(--tap)}
+/* pie de página */
+.fcols a{padding-block:2px}
+footer .wrap{row-gap:40px}
+/* celular: todo lo tocable cómodo */
+@media(max-width:820px){
+  .mini,.lang,.chip,.chip-l,.ev .btn{min-height:var(--tap)}
+  .fcols a{padding-block:12px;line-height:1.4}
+  .top .logo{display:block;padding-block:4px}
+  .hero-pie .link,.ctas .link{padding-block:12px}
+  .filtros{gap:8px}
+  .ofrece{gap:22px}
+}
+/* foco visible coherente */
+.btn:focus-visible,.mini:focus-visible,.chip:focus-visible,.chip-l:focus-visible,.lang:focus-visible,.ep:focus-visible,.dd-b:focus-visible,.escucha:focus-visible{outline:2px solid var(--noche);outline-offset:3px}
+.oscuro .btn:focus-visible,.oscuro .mini:focus-visible,.oscuro .chip-l:focus-visible,.estudio .escucha:focus-visible,footer a:focus-visible,.radio :focus-visible{outline-color:#C9C5E8}
+</style>
+</head>
+<body>
+<div class="papelado" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="La Puerta Azul, inicio">
+      <img src="img/logo-horizontal-noche.svg" alt="La Puerta Azul">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <div class="dd">
+        <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd1">La Puerta Azul <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="dd-p" id="dd1">
+          <a href="#residencia"><b><span class="es">Residencia</span><span class="en">Residency</span></b><span class="es">Espacio y tiempo para crear</span><span class="en">Space and time to create</span></a>
+          <a href="#agenda"><b><span class="es">Agenda</span><span class="en">Calendar</span></b><span class="es">Nido, Puerta abierta y talleres</span><span class="en">Nido, Open door and workshops</span></a>
+          <a href="#estudio"><b><span class="es">Estudio</span><span class="en">Studio</span></b><span class="es">Grabación para compositores</span><span class="en">Recording for composers</span></a>
+          <a href="#educacion"><b><span class="es">Educación</span><span class="en">Education</span></b><span class="es">Infancias y juventudes</span><span class="en">Children and youth</span></a>
+          <a href="#visita"><b><span class="es">Visítanos</span><span class="en">Visit us</span></b>Carretera Oriente 57, Ajijic</a>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd2"><span class="es">Ecosistema Sensorial</span><span class="en">Sensorial network</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="dd-p ancho" id="dd2">
+          <a class="dd-todo" href="#sensorial"><b><span class="es">Todo el ecosistema →</span><span class="en">The whole network →</span></b></a>
+          <a href="#eco-laboratorio"><b>Laboratorio Sensorial</b><span class="es">Núcleo de experimentación y encuentro artístico.</span><span class="en">A core for experimentation and artistic encounter.</span></a>
+          <a href="#eco-radio"><b>Sensorial Radio</b><span class="es">Escucha, creación y difusión radiofónica.</span><span class="en">Listening, creation and radio broadcasting.</span></a>
+          <a href="#eco-discos"><b>Discos Peinados</b><span class="es">Sello de memoria y exploración musical.</span><span class="en">A label for musical memory and exploration.</span></a>
+          <a href="#eco-obra-negra"><b>En Obra Negra</b><span class="es">Festival de música libre y experimentación.</span><span class="en">A festival of free music and experimentation.</span></a>
+          <a href="#eco-no-era"><b>No Era Mi Voz</b><span class="es">Práctica de indisciplina sonora.</span><span class="en">A practice of sonic indiscipline.</span></a>
+          <a href="#eco-vano"><b>Espacio en Vano</b><span class="es">Observatorio para la interacción del habitar actual.</span><span class="en">An observatory for how we inhabit today.</span></a>
+        </div>
+      </div>
+      <button class="lang" id="lang" type="button" aria-label="Cambiar idioma / Change language"><b class="es">ES</b><span class="en">ES</span> · <span class="es">EN</span><b class="en">EN</b></button>
+      <a class="btn btn-p" href="#agenda"><span class="es">Reserva tu lugar</span><span class="en">Book a seat</span></a>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i></i></button>
+    </nav>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <button class="x" id="cerrar" type="button" aria-label="Cerrar menú">×</button>
+  <div class="menu-g">
+    <nav aria-label="La Puerta Azul">
+      <p class="mg-t">La Puerta Azul</p>
+      <a href="#residencia"><span class="es">Residencia</span><span class="en">Residency</span></a>
+      <a href="#agenda"><span class="es">Agenda</span><span class="en">Calendar</span></a>
+      <a href="#estudio"><span class="es">Estudio</span><span class="en">Studio</span></a>
+      <a href="#educacion"><span class="es">Educación</span><span class="en">Education</span></a>
+      <a href="#visita"><span class="es">Visítanos</span><span class="en">Visit</span></a>
+    </nav>
+    <nav aria-label="Ecosistema Sensorial" class="mg-eco">
+      <p class="mg-t"><a href="#sensorial" style="font:inherit;opacity:1;transform:none;color:inherit"><span class="es">Ecosistema Sensorial →</span><span class="en">Sensorial network →</span></a></p>
+      <a href="#eco-laboratorio">Laboratorio Sensorial</a>
+      <a href="#eco-radio">Sensorial Radio</a>
+      <a href="#eco-discos">Discos Peinados</a>
+      <a href="#eco-obra-negra">En Obra Negra</a>
+      <a href="#eco-no-era">No Era Mi Voz</a>
+      <a href="#eco-vano">Espacio en Vano</a>
+    </nav>
+  </div>
+  <div class="pie">Carretera Oriente 57, Centro, Ajijic<br>+52 33 2188 5263 · @lapuertaazul.ajijic</div>
+</div>
+
+<main id="inicio" class="vista">
+
+<!-- HERO -->
+<section class="hero" aria-label="Inicio">
+  <div class="wrap">
+    <div class="hero-txt">
+      <p class="eyebrow" style="animation-delay:.1s"><span class="es">Residencia artística y creación sonora · Ajijic</span><span class="en">Artist residency and sound creation · Ajijic</span></p>
+      <h1>
+        <span class="es"><span class="w" style="animation-delay:.15s">Espacio</span> <span class="w" style="animation-delay:.25s">y</span> <span class="w" style="animation-delay:.35s">tiempo</span> <span class="w" style="animation-delay:.45s">para</span> <span class="w" style="animation-delay:.6s"><em class="g">crear</em></span></span>
+        <span class="en"><span class="w" style="animation-delay:.15s">Space</span> <span class="w" style="animation-delay:.25s">and</span> <span class="w" style="animation-delay:.35s">time</span> <span class="w" style="animation-delay:.45s">to</span> <span class="w" style="animation-delay:.6s"><em class="g">create</em></span></span>
+      </h1>
+      <p class="entrada" style="animation-delay:.7s"><span class="es">Detrás de un portón de madera azul jacaranda, en el centro de Ajijic, artistas de la experimentación sonora habitan, crean y comparten lo que nace aquí con la comunidad de la Ribera.</span><span class="en">Behind a jacaranda-blue wooden gate in the heart of Ajijic, artists working in sound experimentation live, create and share what is born here with the Lake Chapala community.</span></p>
+      <div class="ctas" style="animation-delay:.85s">
+        <a class="btn btn-p mag" href="#agenda"><span class="es">Ver la agenda</span><span class="en">See the calendar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="link" href="#residencia"><span class="es">Postula a la residencia</span><span class="en">Apply for a residency</span></a>
+      </div>
+      <a class="proximo" href="#agenda" style="animation-delay:1s">
+        <i class="pulso" aria-hidden="true"></i>
+        <span><span class="dato"><span class="es">Próximo en la casa</span><span class="en">Next at the house</span></span>
+        <b><span class="es">Nido · sesión de escucha — domingo 25 de octubre · 12:00 h</span><span class="en">Nido · listening session — Sunday, October 25 · 12 pm</span></b></span>
+      </a>
+    </div>
+    <div class="fachada" id="fachada">
+      <div class="img" id="fachadaImg"><img src="img/isotipo-noche.svg" alt="La fachada de La Puerta Azul: portón de madera entre muros de piedra bajo un techo de teja" fetchpriority="high"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-pie dato">
+      <span>Carretera Oriente 57, Centro · Ajijic, Jalisco</span>
+      <a class="link" href="#sensorial"><span class="es">Parte del ecosistema Sensorial</span><span class="en">Part of the Sensorial network</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISOR: FRECUENCIA -->
+<div class="divisor" id="cruce" aria-hidden="true"><canvas id="tablas"></canvas></div>
+
+<!-- AGENDA -->
+<section class="sec" id="agenda" aria-label="Agenda">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow"><span class="es">Agenda</span><span class="en">Calendar</span></p>
+      <h2><span class="es">Te esperamos detrás de la puerta</span><span class="en">We'll be waiting behind the door</span></h2>
+      <p class="entrada"><span class="es">Cupos cercanos, a propósito. Reserva por WhatsApp y te confirmamos tu lugar.</span><span class="en">Small audiences, on purpose. Book on WhatsApp and we'll confirm your seat.</span></p>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar eventos">
+      <button class="chip" type="button" data-f="todo" aria-pressed="true"><span class="es">Todo</span><span class="en">All</span></button>
+      <button class="chip" type="button" data-f="concierto" aria-pressed="false"><span class="es">Puerta abierta</span><span class="en">Open door</span></button>
+      <button class="chip" type="button" data-f="nido" aria-pressed="false">Nido</button>
+      <button class="chip" type="button" data-f="edu" aria-pressed="false"><span class="es">Educación</span><span class="en">Education</span></button>
+    </div>
+    <div class="eventos" id="eventos"></div>
+    <p class="nota"><span class="es">Fechas y obras de ejemplo para esta propuesta de sitio.</span><span class="en">Sample dates and works for this website proposal.</span></p>
+  </div>
+</section>
+
+<!-- CITA -->
+<section class="cita" aria-label="Asombro">
+  <div class="wrap">
+    <blockquote id="cita"><span class="es">Artistas y audiencias coinciden en lo mismo al cruzar la puerta: <em>asombro.</em></span><span class="en">Artists and audiences agree on one thing after walking through the door: <em>wonder.</em></span></blockquote>
+    <p class="firma dato">Arq. Andrés Aguilar Martínez Negrete · <span class="es">fundador y director</span><span class="en">founder and director</span></p>
+  </div>
+</section>
+
+<!-- RESIDENCIA -->
+<section class="sec res" id="residencia" aria-label="Residencia artística">
+  <div class="wrap">
+    <div class="rama" id="rama"><canvas id="taller" role="img" aria-label="Ilustración: un sintetizador modular con perillas y cables de patch, una forma de onda y gestos de partitura gráfica de música improvisada"></canvas></div>
+    <div class="rv">
+      <p class="eyebrow"><span class="es">Residencia artística</span><span class="en">Artist residency</span></p>
+      <h2 style="margin-top:16px"><span class="es">Ven a crear a la Ribera de Chapala</span><span class="en">Come create on Lake Chapala</span></h2>
+      <div class="ofrece">
+        <div><b><span class="es">Tiempo</span><span class="en">Time</span></b><p><span class="es">Para desarrollar tu proyecto sin prisa.</span><span class="en">To develop your project without hurry.</span></p></div>
+        <div><b><span class="es">Espacio</span><span class="en">Space</span></b><p><span class="es">Para habitar y crear detrás de la puerta.</span><span class="en">To live and create behind the door.</span></p></div>
+        <div><b><span class="es">Estudio</span><span class="en">Studio</span></b><p><span class="es">Para grabar lo que nace en residencia.</span><span class="en">To record what the residency brings to life.</span></p></div>
+        <div><b><span class="es">Comunidad</span><span class="en">Community</span></b><p><span class="es">Talleres, clínicas y una Puerta abierta al cierre.</span><span class="en">Workshops, clinics and an Open door at the close.</span></p></div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-p mag" href="https://wa.me/523321885263?text=Hola%2C%20me%20interesa%20postular%20a%20la%20residencia%20de%20La%20Puerta%20Azul." target="_blank" rel="noopener"><span class="es">Pregunta por la convocatoria</span><span class="en">Ask about the open call</span></a>
+        <span class="dato"><span class="es">Para artistas de cualquier disciplina enfocados en el sonido.</span><span class="en">For artists of any discipline working with sound.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTUDIO -->
+<section class="sec estudio" id="estudio" aria-label="Estudio de grabación">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow"><span class="es">Estudio de grabación</span><span class="en">Recording studio</span></p>
+      <h2 style="margin:16px 0 22px"><span class="es">Donde la obra toma cuerpo</span><span class="en">Where the work takes shape</span></h2>
+      <p class="entrada"><span class="es">Un estudio para compositores que buscan materializar sus obras: la madera del portón, la piedra de los muros y el silencio del centro de Ajijic.</span><span class="en">A studio for composers ready to bring their work to life: the wood of the gate, the stone walls and the quiet of central Ajijic.</span></p>
+      <button class="escucha" id="escucha" type="button" aria-pressed="false">
+        <i aria-hidden="true"><svg class="pl" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg><svg class="pz" viewBox="0 0 16 16"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg></i>
+        <span class="es">Escucha la puerta</span><span class="en">Listen to the door</span>
+      </button>
+      <p class="peq"><span class="es">Pieza generativa en vivo: síntesis FM, ruido filtrado y glitch. Nunca suena igual dos veces.</span><span class="en">A live generative piece: FM synthesis, filtered noise and glitch. It never plays the same way twice.</span></p>
+    </div>
+    <div class="osc">
+      <canvas id="onda" aria-label="Forma de onda animada con señales" role="img"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCACION -->
+<section class="sec edu" id="educacion" aria-label="Educación">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow"><span class="es">Educación</span><span class="en">Education</span></p>
+      <h2 style="margin:16px 0 22px"><span class="es">Que cada niña y cada niño viva el arte de cerca</span><span class="en">So every child can experience art up close</span></h2>
+      <p class="entrada"><span class="es">Los residentes comparten su oficio con la Ribera. Construimos instrumentos con semillas, carrizo y agua, y escuchamos lo que suena alrededor.</span><span class="en">Residents share their craft with the lakeside community. We build instruments from seeds, reeds and water, and listen to the sounds around us.</span></p>
+      <div class="ctas" style="margin-top:28px"><a class="btn btn-s" href="#agenda"><span class="es">Ver talleres</span><span class="en">See workshops</span></a></div>
+    </div>
+    <div class="lav rv">
+      <div class="lam"><img src="img/lavado-fronda.webp" alt="" loading="lazy"></div>
+      <div class="sello"><b><span class="es">Instrumentos de la Ribera</span><span class="en">Lakeside instruments</span></b><span class="dato"><span class="es">Taller · 7 a 12 años · sin costo</span><span class="en">Workshop · ages 7–12 · free</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSISTEMA (enlace a su página) -->
+<section class="sec eco-teaser" aria-label="Ecosistema Sensorial">
+  <div class="wrap">
+    <div class="teaser rv">
+      <div>
+        <p class="eyebrow"><span class="es">Ecosistema Sensorial</span><span class="en">The Sensorial network</span></p>
+        <h2><span class="es">Una puerta entre varias</span><span class="en">One door among several</span></h2>
+        <p class="entrada"><span class="es">La Puerta Azul es parte de Sensorial, la red de plataformas para la creación y difusión del arte de Laboratorio Sensorial A.C.</span><span class="en">La Puerta Azul is part of Sensorial, the network of platforms for artistic creation and outreach of Laboratorio Sensorial A.C.</span></p>
+      </div>
+      <a class="btn btn-p" href="#sensorial"><span class="es">Conoce el ecosistema</span><span class="en">Explore the network</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- VISITA -->
+<section class="sec visita" id="visita" aria-label="Visítanos">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow"><span class="es">Visítanos</span><span class="en">Visit us</span></p>
+      <h2 style="margin-top:16px"><span class="es">Busca el portón azul</span><span class="en">Look for the blue gate</span></h2>
+      <p class="dir">Carretera Oriente 57, Centro<br>Ajijic, Jalisco, México</p>
+      <a class="btn btn-s" href="https://www.google.com/maps/search/?api=1&query=Carretera%20Oriente%2057%2C%20Ajijic%2C%20Jalisco" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="es">Abrir en Google Maps</span><span class="en">Open in Google Maps</span></a>
+      <div class="suscribe">
+        <h3><span class="es">Recibe la agenda</span><span class="en">Get the calendar</span></h3>
+        <p class="dato" style="margin-top:6px"><span class="es">Un correo al mes, sin prisa.</span><span class="en">One email a month, no rush.</span></p>
+        <form id="form" novalidate>
+          <label for="correo" class="es" style="position:absolute;left:-9999px">Tu correo</label>
+          <input id="correo" type="email" required placeholder="tu@correo.com" autocomplete="email">
+          <button class="btn btn-p" type="submit"><span class="es">Suscribirme</span><span class="en">Subscribe</span></button>
+        </form>
+      </div>
+    </div>
+    <div class="contacto rv">
+      <div class="fila"><div><small>WhatsApp</small><span class="v">+52 33 2188 5263</span></div><div class="acc"><a class="mini" href="https://wa.me/523321885263" target="_blank" rel="noopener"><span class="es">Escribir</span><span class="en">Message</span></a><button class="mini cp" type="button" data-c="+52 33 2188 5263"><span class="es">Copiar</span><span class="en">Copy</span></button></div></div>
+      <div class="fila"><div><small><span class="es">Correo</span><span class="en">Email</span></small><span class="v">lapuertaazul.ajijic@gmail.com</span></div><div class="acc"><button class="mini cp" type="button" data-c="lapuertaazul.ajijic@gmail.com"><span class="es">Copiar</span><span class="en">Copy</span></button></div></div>
+      <div class="fila"><div><small>Instagram</small><span class="v">@lapuertaazul.ajijic</span></div><div class="acc"><a class="mini" href="https://www.instagram.com/lapuertaazul.ajijic/" target="_blank" rel="noopener"><span class="es">Abrir</span><span class="en">Open</span></a></div></div>
+      <div class="fila"><div><small><span class="es">Dirección</span><span class="en">Address</span></small><span class="v">Carretera Oriente 57, Centro, Ajijic</span></div><div class="acc"><button class="mini cp" type="button" data-c="Carretera Oriente 57, Centro, Ajijic, Jalisco, México"><span class="es">Copiar</span><span class="en">Copy</span></button></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<main id="vSen" hidden>
+  <section class="sen-hero oscuro" aria-label="Ecosistema Sensorial">
+    <div class="wrap">
+      <p class="eyebrow">Laboratorio Sensorial A.C.</p>
+      <h1><span class="es">Ecosistema <em class="g">Sensorial</em></span><span class="en">The Sensorial <em class="g">network</em></span></h1>
+      <p class="entrada"><span class="es">Una red de plataformas para la creación y difusión del arte. Seis proyectos y una casa, La Puerta Azul, que comparten la misma escucha.</span><span class="en">A network of platforms for artistic creation and outreach. Six projects and one house, La Puerta Azul, sharing the same way of listening.</span></p>
+      <nav class="sen-idx" aria-label="Proyectos del ecosistema"><a class="chip-l" href="#eco-laboratorio">Laboratorio Sensorial</a><a class="chip-l" href="#eco-radio">Sensorial Radio</a><a class="chip-l" href="#eco-discos">Discos Peinados</a><a class="chip-l" href="#eco-obra-negra">En Obra Negra</a><a class="chip-l" href="#eco-no-era">No Era Mi Voz</a><a class="chip-l" href="#eco-vano">Espacio en Vano</a></nav>
+    </div>
+    <div class="ecu" aria-hidden="true"><i style="--d:0.00s;--h:30%"></i><i style="--d:0.14s;--h:67%"></i><i style="--d:0.27s;--h:34%"></i><i style="--d:0.41s;--h:71%"></i><i style="--d:0.55s;--h:38%"></i><i style="--d:0.69s;--h:75%"></i><i style="--d:0.82s;--h:42%"></i><i style="--d:0.96s;--h:79%"></i><i style="--d:1.10s;--h:46%"></i><i style="--d:1.23s;--h:83%"></i><i style="--d:0.07s;--h:50%"></i><i style="--d:0.21s;--h:87%"></i><i style="--d:0.34s;--h:54%"></i><i style="--d:0.48s;--h:91%"></i><i style="--d:0.62s;--h:58%"></i><i style="--d:0.76s;--h:95%"></i><i style="--d:0.89s;--h:62%"></i><i style="--d:1.03s;--h:99%"></i><i style="--d:1.17s;--h:66%"></i><i style="--d:0.00s;--h:33%"></i><i style="--d:0.14s;--h:70%"></i><i style="--d:0.28s;--h:37%"></i><i style="--d:0.41s;--h:74%"></i><i style="--d:0.55s;--h:41%"></i><i style="--d:0.69s;--h:78%"></i><i style="--d:0.83s;--h:45%"></i><i style="--d:0.96s;--h:82%"></i><i style="--d:1.10s;--h:49%"></i><i style="--d:1.24s;--h:86%"></i><i style="--d:0.07s;--h:53%"></i><i style="--d:0.21s;--h:90%"></i><i style="--d:0.35s;--h:57%"></i><i style="--d:0.48s;--h:94%"></i><i style="--d:0.62s;--h:61%"></i><i style="--d:0.76s;--h:98%"></i><i style="--d:0.89s;--h:65%"></i><i style="--d:1.03s;--h:32%"></i><i style="--d:1.17s;--h:69%"></i><i style="--d:0.01s;--h:36%"></i><i style="--d:0.14s;--h:73%"></i><i style="--d:0.28s;--h:40%"></i><i style="--d:0.42s;--h:77%"></i><i style="--d:0.55s;--h:44%"></i><i style="--d:0.69s;--h:81%"></i><i style="--d:0.83s;--h:48%"></i><i style="--d:0.97s;--h:85%"></i><i style="--d:1.10s;--h:52%"></i><i style="--d:1.24s;--h:89%"></i></div>
+  </section>
+
+  <section class="sen-sec oscuro" id="eco-laboratorio" aria-label="Laboratorio Sensorial">
+    <div class="wrap sen-grid">
+      <p class="sen-n">01<span>/06</span></p>
+      <div class="sen-txt rv">
+        <h2>Laboratorio Sensorial</h2>
+        <p class="entrada"><span class="es">Núcleo de experimentación y encuentro artístico.</span><span class="en">A core for experimentation and artistic encounter.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sen-sec" id="eco-radio" aria-label="Sensorial Radio">
+    <div class="wrap sen-grid">
+      <p class="sen-n">02<span>/06</span></p>
+      <div class="sen-txt rv">
+        <h2>Sensorial Radio</h2>
+        <p class="entrada"><span class="es">Escucha, creación y difusión radiofónica.</span><span class="en">Listening, creation and radio broadcasting.</span></p>
+        <div class="sen-extra"><div class="radio">
+          <div class="radio-top"><span class="vivo" aria-hidden="true"></span><span class="dato"><span class="es">Sensorial Radio · Jalisco Radio</span><span class="en">Sensorial Radio · Jalisco Radio</span></span></div>
+          <div class="radio-pl" id="radioPl"><iframe title="Sensorial Radio en Mixcloud" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&amp;light=0&amp;feed=%2FJaliscoRadio%2Fsensorial-radio-fantasmagoria-27-de-junio-del-2025%2F" allow="autoplay; encrypted-media" loading="lazy"></iframe></div>
+          <p class="radio-ahora" id="radioAhora"><span class="es">Sonando:</span><span class="en">Now playing:</span> <b id="radioT">Fantasmagoría</b> · <span id="radioD">27 de junio de 2025</span></p>
+          <ol class="eps" id="eps"><li><button type="button" class="ep on" data-feed="/JaliscoRadio/sensorial-radio-fantasmagoria-27-de-junio-del-2025/" data-t="Fantasmagoría" data-d="27 de junio de 2025" aria-pressed="true"><b>Fantasmagoría</b><span>27 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/sensorial-radio-24-de-junio-del-2025/" data-t="Sensorial Radio" data-d="24 de junio de 2025" aria-pressed="false"><b>Sensorial Radio</b><span>24 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/fantasmagoria-20-de-junio-del-2025/" data-t="Fantasmagoría" data-d="20 de junio de 2025" aria-pressed="false"><b>Fantasmagoría</b><span>20 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/sensorial-radio-17-de-junio-del-2025/" data-t="Sensorial Radio" data-d="17 de junio de 2025" aria-pressed="false"><b>Sensorial Radio</b><span>17 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/fantasmagoria-13-de-junio-del-2025/" data-t="Fantasmagoría" data-d="13 de junio de 2025" aria-pressed="false"><b>Fantasmagoría</b><span>13 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/sensorial-radio-10-de-junio-del-2025/" data-t="Sensorial Radio" data-d="10 de junio de 2025" aria-pressed="false"><b>Sensorial Radio</b><span>10 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/fantasmagoria-06-de-junio-del-2025/" data-t="Fantasmagoría" data-d="6 de junio de 2025" aria-pressed="false"><b>Fantasmagoría</b><span>6 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/sensorial-radio-03-de-junio-del-2025/" data-t="Sensorial Radio" data-d="3 de junio de 2025" aria-pressed="false"><b>Sensorial Radio</b><span>3 de junio de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/ensorial-radio-fantasmagoria-30-de-mayo-del-2025/" data-t="Fantasmagoría" data-d="30 de mayo de 2025" aria-pressed="false"><b>Fantasmagoría</b><span>30 de mayo de 2025</span></button></li><li><button type="button" class="ep" data-feed="/JaliscoRadio/sensorial-radio-27-de-mayo-del-2025/" data-t="Sensorial Radio" data-d="27 de mayo de 2025" aria-pressed="false"><b>Sensorial Radio</b><span>27 de mayo de 2025</span></button></li></ol>
+        </div>
+        <a class="mini" href="https://www.mixcloud.com/JaliscoRadio/playlists/sensorial-radio/" target="_blank" rel="noopener"><span class="es">Todos los programas en Mixcloud</span><span class="en">All shows on Mixcloud</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sen-sec oscuro" id="eco-discos" aria-label="Discos Peinados">
+    <div class="wrap sen-grid">
+      <p class="sen-n">03<span>/06</span></p>
+      <div class="sen-txt rv">
+        <h2>Discos Peinados</h2>
+        <p class="entrada"><span class="es">Sello de memoria y exploración musical.</span><span class="en">A label for musical memory and exploration.</span></p>
+        <div class="sen-extra"><div class="redes"><a class="mini" href="https://www.instagram.com/discospeinados/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg> Instagram</a><a class="mini" href="https://www.facebook.com/DiscosPeinados/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sen-sec" id="eco-obra-negra" aria-label="En Obra Negra">
+    <div class="wrap sen-grid">
+      <p class="sen-n">04<span>/06</span></p>
+      <div class="sen-txt rv">
+        <h2>En Obra Negra</h2>
+        <p class="entrada"><span class="es">Festival de música libre y experimentación.</span><span class="en">A festival of free music and experimentation.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sen-sec oscuro" id="eco-no-era" aria-label="No Era Mi Voz">
+    <div class="wrap sen-grid">
+      <p class="sen-n">05<span>/06</span></p>
+      <div class="sen-txt rv">
+        <h2>No Era Mi Voz</h2>
+        <p class="entrada"><span class="es">Práctica de indisciplina sonora.</span><span class="en">A practice of sonic indiscipline.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sen-sec" id="eco-vano" aria-label="Espacio en Vano">
+    <div class="wrap sen-grid">
+      <p class="sen-n">06<span>/06</span></p>
+      <div class="sen-txt rv">
+        <h2>Espacio en Vano</h2>
+        <p class="entrada"><span class="es">Observatorio para la interacción del habitar actual.</span><span class="en">An observatory for how we inhabit today.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sen-sec sen-fin" aria-label="La Puerta Azul">
+    <div class="wrap sen-grid">
+      <p class="sen-n">+</p>
+      <div class="sen-txt rv">
+        <h2>La Puerta Azul</h2>
+        <p class="entrada"><span class="es">La casa del ecosistema en Ajijic: residencia artística, conciertos, sesiones de escucha, estudio y educación.</span><span class="en">The network's house in Ajijic: artist residency, concerts, listening sessions, studio and education.</span></p>
+        <div class="sen-extra"><a class="btn btn-p" href="#inicio"><span class="es">Volver a La Puerta Azul</span><span class="en">Back to La Puerta Azul</span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="lv">
+      <img src="img/logo-vertical-blanco.svg" alt="La Puerta Azul">
+    </div>
+    <div class="fcols">
+      <div><h4><span class="es">La casa</span><span class="en">The house</span></h4>
+        <a href="#agenda"><span class="es">Agenda</span><span class="en">Calendar</span></a><a href="#residencia"><span class="es">Residencia</span><span class="en">Residency</span></a><a href="#estudio"><span class="es">Estudio</span><span class="en">Studio</span></a></div>
+      <div><h4><span class="es">Contacto</span><span class="en">Contact</span></h4>
+        <a href="https://wa.me/523321885263" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/lapuertaazul.ajijic/" target="_blank" rel="noopener">Instagram</a><p>lapuertaazul.ajijic@gmail.com</p></div>
+      <div><h4><span class="es">Ecosistema Sensorial</span><span class="en">Sensorial network</span></h4><a href="#eco-laboratorio">Laboratorio Sensorial</a><a href="#eco-radio">Sensorial Radio</a><a href="#eco-discos">Discos Peinados</a><a href="#eco-obra-negra">En Obra Negra</a><a href="#eco-no-era">No Era Mi Voz</a><a href="#eco-vano">Espacio en Vano</a></div>
+    </div>
+    <div class="legal"><span>© 2026 La Puerta Azul · <span class="es">Espacio y tiempo para crear</span><span class="en">Space and time to create</span></span><span><span class="es">Diseño y desarrollo:</span><span class="en">Design and development:</span> Oráculo Analytics</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/523321885263" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>
+  <span class="t"><span class="es">Escríbenos</span><span class="en">Message us</span></span>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const root=document.documentElement;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const ease=t=>1-Math.pow(1-t,3);
+const easeIO=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+
+/* language */
+let lang='es';
+try{lang=localStorage.getItem('lpa-lang')||'es'}catch(e){}
+const setLang=l=>{lang=l;root.lang=l;try{localStorage.setItem('lpa-lang',l)}catch(e){};renderEventos();sinViudas(document.querySelector('#eventos'));tituloPagina()};
+function tituloPagina(){const sen=!document.querySelector('#vSen').hidden;document.title=sen?(lang==='en'?'Sensorial Network · La Puerta Azul':'Ecosistema Sensorial · La Puerta Azul'):(lang==='en'?'La Puerta Azul · Artist residency in Ajijic':'La Puerta Azul · Residencia artística en Ajijic')}
+$('#lang').addEventListener('click',()=>setLang(lang==='es'?'en':'es'));
+
+/* toast */
+let tt;const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)};
+
+/* header */
+const top=$('#top');let lastY=scrollY;
+/* mobile menu */
+const menu=$('#menu'),burger=$('#burger');
+const openMenu=o=>{menu.classList.toggle('open',o);menu.setAttribute('aria-hidden',!o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+burger.addEventListener('click',()=>openMenu(true));
+$('#cerrar').addEventListener('click',()=>openMenu(false));
+$$('#menu nav a').forEach(a=>a.addEventListener('click',()=>openMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape'){openMenu(false);closeDD()}});
+const dds=$$('.dd');const closeDD=x=>dds.forEach(d=>{if(d!==x){d.classList.remove('open');d.querySelector('.dd-b').setAttribute('aria-expanded','false')}});
+dds.forEach(d=>{const b=d.querySelector('.dd-b');let t;
+  const op=()=>{clearTimeout(t);closeDD(d);d.classList.add('open');b.setAttribute('aria-expanded','true')};
+  const cl=()=>{t=setTimeout(()=>{d.classList.remove('open');b.setAttribute('aria-expanded','false')},180)};
+  b.addEventListener('click',()=>d.classList.contains('open')?(d.classList.remove('open'),b.setAttribute('aria-expanded','false')):op());
+  if(matchMedia('(hover:hover)').matches){d.addEventListener('pointerenter',op);d.addEventListener('pointerleave',cl)}
+  d.addEventListener('focusout',e=>{if(!d.contains(e.relatedTarget))cl()});
+  d.querySelectorAll('.dd-p a').forEach(a=>a.addEventListener('click',()=>closeDD()))});
+document.addEventListener('click',e=>{if(!e.target.closest('.dd'))closeDD()});
+
+
+/* magnetic buttons */
+if(!RM&&matchMedia('(hover:hover)').matches)$$('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
+$$('.rv,#rama').forEach(el=>io.observe(el));
+
+/* agenda */
+const EV=[
+ {f:'nido',d:'25',m:{es:'oct · dom',en:'Oct · Sun'},img:'motivo-nido',tag:{es:'Nido · sesión de escucha',en:'Nido · listening session'},t:{es:'Escuchar la tarde',en:'Listening to the afternoon'},p:{es:'Una selección de grabaciones de campo de la Ribera, escuchadas en silencio y conversadas después.',en:'Field recordings from around the lake, heard in silence and talked about afterwards.'},meta:{es:'12:00 h · Entrada libre',en:'12 pm · Free entry'}},
+ {f:'concierto',d:'30',m:{es:'oct · vie',en:'Oct · Fri'},img:'motivo-partitura',tag:{es:'Puerta abierta · cierre de residencia',en:'Open door · residency closing'},t:{es:'Piano preparado y electrónica',en:'Prepared piano and electronics'},p:{es:'La residente presenta la obra que escribió en cuatro semanas detrás de la puerta.',en:'The resident presents the piece she wrote over four weeks behind the door.'},meta:{es:'19:00 h · Cupo 40',en:'7 pm · 40 seats'}},
+ {f:'edu',d:'07',m:{es:'nov · sáb',en:'Nov · Sat'},img:'motivo-onda',tag:{es:'Educación',en:'Education'},t:{es:'Instrumentos de la Ribera',en:'Lakeside instruments'},p:{es:'Construimos instrumentos con semillas, carrizo y agua. Para niñas y niños de 7 a 12 años.',en:'We build instruments from seeds, reeds and water. For children aged 7 to 12.'},meta:{es:'11:00 h · Sin costo',en:'11 am · Free'}},
+ {f:'nido',d:'08',m:{es:'nov · dom',en:'Nov · Sun'},img:'motivo-nido',tag:{es:'Nido · sesión de escucha',en:'Nido · listening session'},t:{es:'Un disco, de principio a fin',en:'One record, start to finish'},p:{es:'Escuchamos juntos un álbum completo, como se hacía antes: sin saltar canciones.',en:'We listen to a whole album together, the old way: no skipping.'},meta:{es:'12:00 h · Entrada libre',en:'12 pm · Free entry'}},
+ {f:'concierto',d:'27',m:{es:'nov · vie',en:'Nov · Fri'},img:'motivo-ruido',tag:{es:'Puerta abierta · cierre de residencia',en:'Open door · residency closing'},t:{es:'Objetos sonoros',en:'Sound objects'},p:{es:'Esculturas que suenan, construidas durante la residencia con materiales de la región.',en:'Sounding sculptures built during the residency from local materials.'},meta:{es:'19:00 h · Cupo 40',en:'7 pm · 40 seats'}}
+];
+let filtro='todo';
+function renderEventos(){const box=$('#eventos');box.innerHTML='';
+  EV.filter(e=>filtro==='todo'||e.f===filtro).forEach((e,i)=>{
+    const msg=encodeURIComponent((lang==='es'?'Hola, quiero reservar para: ':'Hi, I would like to book: ')+e.t[lang]+' ('+e.d+' '+e.m[lang]+')');
+    const a=document.createElement('article');a.className='ev';a.style.animationDelay=(i*.07)+'s';
+    a.innerHTML=`<div class="arte"><img src="img/${e.img}.webp" alt="" loading="lazy"><div class="fecha"><b>${e.d}</b><span>${e.m[lang]}</span></div></div>
+    <div class="cuerpo"><span class="pill${e.f==='edu'?' fr':''}">${e.tag[lang]}</span><h3>${e.t[lang]}</h3><p>${e.p[lang]}</p>
+    <div class="pie"><span class="dato">${e.meta[lang]}</span><a class="btn btn-p" href="https://wa.me/523321885263?text=${msg}" target="_blank" rel="noopener">${lang==='es'?'Reservar':'Book'}</a></div></div>`;
+    box.appendChild(a)})}
+$$('.chip').forEach(c=>c.addEventListener('click',()=>{filtro=c.dataset.f;$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));renderEventos()}));
+setLang(lang);
+
+/* quote word scrub */
+const quoteWords=[];
+$$('#cita > span').forEach(sp=>{const walk=n=>{[...n.childNodes].forEach(ch=>{if(ch.nodeType===3){const f=document.createDocumentFragment();ch.textContent.split(/(\s+)/).forEach(w=>{if(!w.trim()){f.appendChild(document.createTextNode(w));return}const s=document.createElement('span');s.className='pal';s.textContent=w;f.appendChild(s);quoteWords.push(s)});ch.replaceWith(f)}else walk(ch)})};walk(sp)});
+
+/* copy */
+$$('.cp').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.c;const ok=()=>toast(lang==='es'?'Copiado: '+v:'Copied: '+v);
+  try{navigator.clipboard.writeText(v).then(ok,()=>{selectV(b);toast(lang==='es'?'Selecciónalo y cópialo':'Select it and copy')})}catch(e){selectV(b)}}));
+function selectV(b){const v=b.closest('.fila').querySelector('.v');const r=document.createRange();r.selectNodeContents(v);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+/* form */
+$('#form').addEventListener('submit',e=>{e.preventDefault();const i=$('#correo');if(!/^\S+@\S+\.\S+$/.test(i.value)){toast(lang==='es'?'Revisa tu correo: falta algo.':'Check your email address.');i.focus();return}
+  toast(lang==='es'?'Listo. Te escribiremos con la próxima agenda.':'Done. We will send you the next calendar.');i.value=''});
+
+
+/* Sensorial Radio: reproductor de Mixcloud dentro de la página */
+const pl=$('#radioPl');
+const mcSrc=(f,auto)=>'https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&light=0'+(auto?'&autoplay=1':'')+'&feed='+encodeURIComponent(f);
+$$('.ep').forEach(b=>b.addEventListener('click',()=>{$$('.ep').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+  pl.innerHTML=`<iframe title="Sensorial Radio en Mixcloud" src="${mcSrc(b.dataset.feed,true)}" allow="autoplay; encrypted-media"></iframe>`;
+  $('#radioT').textContent=b.dataset.t;$('#radioD').textContent=b.dataset.d}));
+/* ---- dos páginas: La Puerta Azul y Ecosistema Sensorial ---- */
+const vLPA=$('#inicio'),vSen=$('#vSen');
+function go(h,smooth){const sen=h==='sensorial'||h.startsWith('eco-');const changed=vSen.hidden===sen;
+  vLPA.hidden=sen;vSen.hidden=!sen;document.body.classList.toggle('en-sen',sen);tituloPagina();
+  openMenu(false);closeDD();
+  const el=(h&&h!=='sensorial'&&h!=='inicio')?document.getElementById(h):null;
+  requestAnimationFrame(()=>{if(el)el.scrollIntoView({behavior:changed||!smooth?'auto':'smooth'});else scrollTo({top:0,behavior:'auto'});
+    if(changed){sizeTablas&&sizeTablas();$$('.rv').forEach(x=>{if(x.getBoundingClientRect().top<innerHeight)x.classList.add('vis')})}})}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const h=a.getAttribute('href').slice(1);if(!h)return;
+  e.preventDefault();try{history.pushState(null,'','#'+h)}catch(_){}go(h,true)});
+addEventListener('popstate',()=>go(location.hash.slice(1),false));
+addEventListener('hashchange',()=>go(location.hash.slice(1),false));
+
+
+/* Residencia: taller de electrónica e improvisación */
+(()=>{const c=$('#taller'),g=c.getContext('2d');let w,h,vis=false;
+ const N='#1E1F3D',P='#F6F1E7',F='#C9C5E8',T='#A05A3B';
+ function size(){const d=Math.min(devicePixelRatio||1,2);w=c.clientWidth;h=c.clientHeight;c.width=w*d;c.height=h*d;g.setTransform(d,0,0,d,0,0)}
+ size();addEventListener('resize',size);
+ new IntersectionObserver(e=>{vis=e[0].isIntersecting},{}).observe(c);
+ // fixed layout in unit space (0..1)
+ const knobs=[];for(let r=0;r<3;r++)for(let k=0;k<4;k++)knobs.push({x:.12+k*.085,y:.47+r*.11,r:.026+(k%2)*.006,ph:Math.random()*6,sp:.3+Math.random()*.6});
+ const jacks=[];for(let k=0;k<6;k++)jacks.push({x:.11+k*.055,y:.86});
+ const jacks2=[];for(let k=0;k<4;k++)jacks2.push({x:.545+k*.055,y:.86});
+ const cables=[[0,7],[2,5],[4,8],[1,9]];
+ const score=[];for(let i=0;i<22;i++)score.push({x:.56+Math.random()*.38,y:.08+Math.random()*.26,r:1.5+Math.random()*3.5});
+ const gest=Array.from({length:7},(_,i)=>[.55+i*.065,.36-Math.sin(i*1.3)*.05-Math.random()*.03]);
+ function line(pts){g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x*w,y*h):g.moveTo(x*w,y*h));g.stroke()}
+ function draw(t){g.clearRect(0,0,w,h);g.lineCap='round';g.lineJoin='round';const u=Math.min(w,h);
+  // panel
+  g.fillStyle='rgba(30,31,61,.08)';g.strokeStyle=N;g.lineWidth=2;
+  g.beginPath();g.roundRect(.05*w,.38*h,.43*w,.56*h,6);g.fill();g.stroke();
+  g.beginPath();g.roundRect(.505*w,.62*h,.26*w,.32*h,6);g.fill();g.stroke();
+  // screws
+  g.fillStyle=N;[[.07,.4],[.46,.4],[.07,.92],[.46,.92]].forEach(([x,y])=>{g.beginPath();g.arc(x*w,y*h,2.5,0,7);g.fill()});
+  // knobs
+  knobs.forEach(k=>{const R=k.r*u*1.6;g.lineWidth=2;g.strokeStyle=N;g.fillStyle=P;g.beginPath();g.arc(k.x*w,k.y*h,R,0,7);g.fill();g.stroke();
+    for(let i=0;i<7;i++){const a=2.3+i*.8;g.beginPath();g.moveTo(k.x*w+Math.cos(a)*R*1.25,k.y*h+Math.sin(a)*R*1.25);g.lineTo(k.x*w+Math.cos(a)*R*1.45,k.y*h+Math.sin(a)*R*1.45);g.lineWidth=1.2;g.stroke()}
+    const a=2.4+(Math.sin(t*k.sp+k.ph)*.5+.5)*4.6;g.lineWidth=2.5;g.beginPath();g.moveTo(k.x*w,k.y*h);g.lineTo(k.x*w+Math.cos(a)*R*.8,k.y*h+Math.sin(a)*R*.8);g.stroke()});
+  // faders on second module
+  for(let i=0;i<3;i++){const x=(.56+i*.07)*w,y0=.66*h,y1=.8*h;g.strokeStyle=N;g.lineWidth=2;g.beginPath();g.moveTo(x,y0);g.lineTo(x,y1);g.stroke();
+    const y=y0+(y1-y0)*(Math.sin(t*.7+i*1.9)*.5+.5);g.fillStyle=N;g.fillRect(x-9,y-4,18,8)}
+  // jacks
+  const J=[...jacks,...jacks2];J.forEach(j=>{g.fillStyle=P;g.strokeStyle=N;g.lineWidth=2;g.beginPath();g.arc(j.x*w,j.y*h,6,0,7);g.fill();g.stroke();g.fillStyle=N;g.beginPath();g.arc(j.x*w,j.y*h,2.4,0,7);g.fill()});
+  // cables
+  cables.forEach(([a,b],i)=>{const A=J[a],B=J[b];const sag=.1+.04*Math.sin(t*.9+i*1.7);
+    g.strokeStyle=i%2?T:N;g.lineWidth=4;g.beginPath();g.moveTo(A.x*w,A.y*h);
+    g.bezierCurveTo(A.x*w,(A.y+sag)*h,B.x*w,(B.y+sag)*h,B.x*w,B.y*h);g.stroke()});
+  // oscilloscope wave over the panel top
+  g.strokeStyle=N;g.lineWidth=2;g.beginPath();for(let i=0;i<=80;i++){const x=.08+i/80*.37,y=.335+Math.sin(i*.42+t*2.2)*.025*Math.sin(i/80*Math.PI)+Math.sin(i*1.7+t*4)*.006;i?g.lineTo(x*w,y*h):g.moveTo(x*w,y*h)}g.stroke();
+  // improvisation: graphic score (top right)
+  g.strokeStyle=N;g.lineWidth=1;for(let i=0;i<5;i++){g.globalAlpha=.35;line([[.54,.1+i*.06],[.97,.1+i*.06]])}g.globalAlpha=1;
+  score.forEach((d,i)=>{g.fillStyle=i%5===0?P:N;g.beginPath();g.arc(d.x*w,(d.y+Math.sin(t*.8+i)*.004)*h,d.r,0,7);g.fill()});
+  g.strokeStyle=N;g.lineWidth=2.2;g.beginPath();gest.forEach(([x,y],i)=>{const Y=(y+Math.sin(t*1.1+i)*.006)*h;i?g.quadraticCurveTo((gest[i-1][0]*w+x*w)/2,Y-u*.04,x*w,Y):g.moveTo(x*w,Y)});g.stroke();
+  // glissando + fermata + spiral
+  g.lineWidth=2;g.beginPath();for(let i=0;i<=30;i++){const x=.6+i/30*.3,y=.5-i/30*.06+Math.sin(i*1.3+t*3)*.008;i?g.lineTo(x*w,y*h):g.moveTo(x*w,y*h)}g.stroke();
+  g.beginPath();g.arc(.88*w,.58*h,u*.035,Math.PI,0);g.stroke();g.fillStyle=N;g.beginPath();g.arc(.88*w,.575*h,3,0,7);g.fill();
+  g.beginPath();for(let i=0;i<70;i++){const a=i/70*14,r=a/14*u*.05;const x=.84*w+Math.cos(a+t*.6)*r,y=.75*h+Math.sin(a+t*.6)*r;i?g.lineTo(x,y):g.moveTo(x,y)}g.stroke();
+  // noise grains
+  for(let i=0;i<26;i++){g.fillStyle=Math.random()<.5?N:P;g.globalAlpha=.25+Math.random()*.5;g.fillRect((.78+Math.random()*.18)*w,(.84+Math.random()*.1)*h,3,3)}g.globalAlpha=1}
+ function loop(){if(vis||RM)draw(RM?0:performance.now()/1000);if(!RM)requestAnimationFrame(loop)}
+ loop()})();
+
+/* sin palabra suelta al final de títulos y párrafos */
+function sinViudas(root){root.querySelectorAll('h1,h2,h3,p,blockquote,.ofrece b').forEach(el=>{const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n,last=null;while(n=tw.nextNode()){if(n.textContent.trim())last=n}
+  if(!last)return;const t=last.textContent.replace(/\s+$/,'');const i=t.lastIndexOf(' ');if(i>0&&t.length-i<14)last.textContent=t.slice(0,i)+'\u00a0'+t.slice(i+1)+last.textContent.slice(t.length)})}
+sinViudas(document);
+/* ---- scroll-driven scenes ---- */
+const cruce=$('#cruce'),tb=$('#tablas'),tx=tb.getContext('2d');
+let TW=0,TH=0,planks=[];
+function sizeTablas(){const d=Math.min(devicePixelRatio||1,2);TW=tb.clientWidth;TH=tb.clientHeight;tb.width=TW*d;tb.height=TH*d;tx.setTransform(d,0,0,d,0,0);
+  const n=Math.max(16,Math.round(TW/30));planks=Array.from({length:n},(_,i)=>({x:(i+.5)/n+(Math.random()-.5)*.25/n,w:1.6+Math.random()*3.4,seed:Math.random()*100,
+    wob:Array.from({length:9},()=>(Math.random()-.5)*5),f:.6+Math.random()*1.8}))}
+sizeTablas();addEventListener('resize',sizeTablas);
+function drawTablas(p,t){tx.clearRect(0,0,TW,TH);const n=planks.length,gap=TW/n;
+  const g=.25+.75*ease(clamp(p/.5));
+  const yc=TH*.5, maxA=TH*.46*g;
+  tx.strokeStyle='#1E1F3D';tx.lineCap='round';
+  planks.forEach((k,i)=>{const u=i/(n-1);const env=Math.pow(Math.sin(Math.PI*(.04+.92*u)),.7);
+    const osc=.35+.65*Math.abs(Math.sin(t*k.f*1.7+k.seed+u*7))*(.55+.45*Math.sin(t*.9+u*3.1));
+    const a=Math.max(1.5,maxA*env*osc);
+    const x=k.x*TW;
+    const top=yc-a, bot=yc+a;
+    tx.lineWidth=gap*.38;tx.globalAlpha=.75;
+    tx.beginPath();for(let j=0;j<=8;j++){const y=top+(bot-top)*j/8;const xx=x;j?tx.lineTo(xx,y):tx.moveTo(xx,y)}tx.stroke()});
+  tx.globalAlpha=1}
+function frame(){
+  const y=scrollY,vh=innerHeight,vw=innerWidth;
+  /* header */
+  top.classList.toggle('solid',y>40);
+  top.classList.toggle('hide',y>lastY&&y>300&&!menu.classList.contains('open'));lastY=y;
+
+  if(!RM){
+  /* divisor de frecuencia */
+  const r=cruce.getBoundingClientRect();
+  if(r.top<vh&&r.bottom>0){const p=clamp((vh-r.top)/(vh+r.height));drawTablas(p,performance.now()/1000)}
+  /* quote */
+  const q=$('#cita').getBoundingClientRect();const qp=clamp((vh*.85-q.top)/(q.height+vh*.35));
+  const vis=quoteWords.filter(w=>w.offsetParent);vis.forEach((w,i)=>{w.style.opacity=.16+.84*clamp(qp*vis.length*1.15-i)});
+  /* parallax */
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+if(location.hash)go(location.hash.slice(1),false);
+
+/* ---- oscilloscope + generative sound ---- */
+const oc=$('#onda'),ox=oc.getContext('2d');let OW,OH,energy=.25,blooms=[];
+function sizeOsc(){const d=Math.min(devicePixelRatio||1,2),r=oc.getBoundingClientRect();OW=r.width;OH=r.height;oc.width=OW*d;oc.height=OH*d;ox.setTransform(d,0,0,d,0,0)}
+sizeOsc();addEventListener('resize',sizeOsc);
+let ph=0,oscVis=false;new IntersectionObserver(e=>{oscVis=e[0].isIntersecting},{}).observe(oc);
+function drawOsc(){if(oscVis||RM){ox.clearRect(0,0,OW,OH);
+  // grid
+  ox.strokeStyle='rgba(201,197,232,.08)';ox.lineWidth=1;for(let x=0;x<OW;x+=OW/12){ox.beginPath();ox.moveTo(x,0);ox.lineTo(x,OH);ox.stroke()}for(let y=0;y<OH;y+=OH/8){ox.beginPath();ox.moveTo(0,y);ox.lineTo(OW,y);ox.stroke()}
+  if(!RM)ph+=.018;energy+=(.22-energy)*.02;
+  const layers=[{c:'rgba(164,171,212,.35)',a:.7,f:1.3,o:0},{c:'rgba(201,197,232,.55)',a:.9,f:2.1,o:1.7},{c:'#C9C5E8',a:1,f:3.2,o:3.1}];
+  const pts=[];
+  layers.forEach((L,li)=>{ox.beginPath();ox.strokeStyle=L.c;ox.lineWidth=li===2?2:1.4;
+    for(let x=0;x<=OW;x+=3){const u=x/OW;const env=Math.sin(Math.PI*u);
+      const y=OH*.56+Math.sin(u*L.f*6.283+ph*(1+li*.3)+L.o)*OH*.22*energy*L.a*env*2.2+Math.sin(u*17+ph*2.3)*OH*.015*env;
+      x?ox.lineTo(x,y):ox.moveTo(x,y);if(li===2&&x%60===0)pts.push([x,y])}
+    ox.stroke()});
+  // flowers riding the main wave
+  pts.forEach(([x,y],i)=>{if(i%2)return;ox.strokeStyle='#A4ABD4';ox.lineWidth=1.2;ox.strokeRect(x-5,y-5,10,10);ox.fillStyle='#F3EEE4';ox.fillRect(x-2,y-2,4,4)});
+  for(let i=0;i<40;i++){if(Math.random()>energy*.9)continue;ox.fillStyle=`rgba(201,197,232,${Math.random()*.5})`;ox.fillRect(Math.random()*OW,Math.random()*OH,2+Math.random()*3,2)}
+  blooms=blooms.filter(b=>(b.r+=1.4,b.a-=.012)>0);blooms.forEach(b=>{ox.strokeStyle=`rgba(201,197,232,${b.a})`;ox.lineWidth=1;ox.beginPath();ox.arc(b.x,b.y,b.r,0,6.283);ox.stroke()});
+ }
+ if(!RM)requestAnimationFrame(drawOsc)}
+drawOsc();
+
+let ac=null,playing=false,timer=null,bus,master,delay,verb,noiseBuf,voices=[];
+/* Pieza generativa: síntesis FM, ruido filtrado, glitch y crujidos */
+const R_=(a,b)=>a+Math.random()*(b-a);
+function mkNoise(sec){const n=ac.sampleRate*sec,b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=Math.random()*2-1;return b}
+function crushCurve(steps){const c=new Float32Array(1024);for(let i=0;i<1024;i++){const x=i/511.5-1;c[i]=Math.round(x*steps)/steps}return c}
+function setup(){ac=new (window.AudioContext||window.webkitAudioContext)();
+  const comp=ac.createDynamicsCompressor();comp.threshold.value=-18;comp.ratio.value=4;comp.connect(ac.destination);
+  master=ac.createGain();master.gain.value=0;master.connect(comp);bus=ac.createGain();bus.gain.value=.9;bus.connect(master);
+  delay=ac.createDelay(2);delay.delayTime.value=.37;const fb=ac.createGain();fb.gain.value=.45;const lp=ac.createBiquadFilter();lp.frequency.value=2400;
+  delay.connect(lp).connect(fb).connect(delay);lp.connect(master);
+  verb=ac.createConvolver();const L=ac.sampleRate*3.2,ir=ac.createBuffer(2,L,ac.sampleRate);for(let ch=0;ch<2;ch++){const d=ir.getChannelData(ch);for(let i=0;i<L;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/L,2.6)}
+  verb.buffer=ir;const vg=ac.createGain();vg.gain.value=.35;verb.connect(vg).connect(master);noiseBuf=mkNoise(4)}
+function send(node,dly=.3,rv=.4){node.connect(bus);if(dly){const g=ac.createGain();g.gain.value=dly;node.connect(g).connect(delay)}if(rv){const g=ac.createGain();g.gain.value=rv;node.connect(g).connect(verb)}}
+function drones(){const t=ac.currentTime;
+  [[55,1.414,.07],[82.41,3.01,.05]].forEach(([f,ratio,vol],i)=>{
+    const car=ac.createOscillator(),mod=ac.createOscillator(),mg=ac.createGain(),lfo=ac.createOscillator(),lg=ac.createGain(),flt=ac.createBiquadFilter(),flfo=ac.createOscillator(),flg=ac.createGain(),g=ac.createGain();
+    car.frequency.value=f;mod.frequency.value=f*ratio;mg.gain.value=f*2;lfo.frequency.value=.05+i*.031;lg.gain.value=f*2.5;
+    lfo.connect(lg).connect(mg.gain);mod.connect(mg).connect(car.frequency);
+    flt.type='lowpass';flt.Q.value=6;flt.frequency.value=600;flfo.frequency.value=.07+i*.05;flg.gain.value=450;flfo.connect(flg).connect(flt.frequency);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+4);
+    car.connect(flt).connect(g);send(g,.15,.5);[car,mod,lfo,flfo].forEach(o=>{o.start(t);voices.push(o)})});
+  // ruido que respira
+  const n=ac.createBufferSource();n.buffer=noiseBuf;n.loop=true;const bp=ac.createBiquadFilter();bp.type='bandpass';bp.Q.value=9;bp.frequency.value=900;
+  const ng=ac.createGain();ng.gain.setValueAtTime(0,t);ng.gain.linearRampToValueAtTime(.05,t+5);n.connect(bp).connect(ng);send(ng,.2,.6);n.start(t);voices.push(n);
+  const sweep=()=>{if(!playing)return;const now=ac.currentTime;bp.frequency.exponentialRampToValueAtTime(R_(180,6000),now+R_(2,6));bp.Q.linearRampToValueAtTime(R_(2,18),now+3);setTimeout(sweep,R_(2500,6000))};sweep()}
+const EVENTS={
+  glitch(){const t=ac.currentTime,reps=Math.random()<.5?1:Math.floor(R_(3,9)),gap=R_(.03,.075),len=R_(.015,.05);
+    const hp=ac.createBiquadFilter();hp.type='highpass';hp.frequency.value=R_(800,5000);const g=ac.createGain();g.gain.value=.5;hp.connect(g);send(g,.35,.2);
+    for(let i=0;i<reps;i++){const s=ac.createBufferSource();s.buffer=noiseBuf;const e=ac.createGain();const st=t+i*gap;
+      e.gain.setValueAtTime(0,st);e.gain.linearRampToValueAtTime(.9,st+.002);e.gain.setValueAtTime(.9,st+len);e.gain.linearRampToValueAtTime(0,st+len+.004);
+      s.connect(e).connect(hp);s.start(st,R_(0,3),len+.01)}},
+  blip(){const t=ac.currentTime,f=R_(600,3200),car=ac.createOscillator(),mod=ac.createOscillator(),mg=ac.createGain(),g=ac.createGain();
+    mod.frequency.value=f*R_(.5,7);mg.gain.setValueAtTime(f*R_(2,9),t);mg.gain.exponentialRampToValueAtTime(1,t+.6);mod.connect(mg).connect(car.frequency);car.frequency.value=f;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.005);g.gain.exponentialRampToValueAtTime(.0004,t+R_(.3,1.2));car.connect(g);send(g,.5,.4);
+    car.start(t);mod.start(t);car.stop(t+1.3);mod.stop(t+1.3)},
+  crush(){const t=ac.currentTime,o=ac.createOscillator(),ws=ac.createWaveShaper(),g=ac.createGain();o.type='square';ws.curve=crushCurve(Math.floor(R_(2,6)));
+    const f0=R_(60,400),f1=f0*R_(4,16);o.frequency.setValueAtTime(Math.random()<.5?f0:f1,t);o.frequency.exponentialRampToValueAtTime(Math.random()<.5?f1:f0,t+R_(.4,1.6));
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.05,t+.03);g.gain.linearRampToValueAtTime(0,t+1.7);o.connect(ws).connect(g);send(g,.3,.3);o.start(t);o.stop(t+1.8)},
+  sub(){const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(R_(70,110),t);o.frequency.exponentialRampToValueAtTime(32,t+.5);
+    g.gain.setValueAtTime(.5,t);g.gain.exponentialRampToValueAtTime(.001,t+.9);o.connect(g);send(g,0,.15);o.start(t);o.stop(t+1)},
+  crackle(){const t=ac.currentTime,n=Math.floor(R_(6,22));for(let i=0;i<n;i++){const s=ac.createBufferSource();s.buffer=noiseBuf;const g=ac.createGain();const st=t+R_(0,1.2);
+    g.gain.setValueAtTime(R_(.2,.7),st);g.gain.exponentialRampToValueAtTime(.001,st+.006);s.connect(g);send(g,.1,.5);s.start(st,R_(0,3),.01)}},
+  ring(){const t=ac.currentTime,a=ac.createOscillator(),b=ac.createOscillator(),rm=ac.createGain(),g=ac.createGain();a.frequency.value=R_(200,900);b.frequency.value=R_(30,300);
+    rm.gain.value=0;b.connect(rm.gain);a.connect(rm);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+R_(.5,2));g.gain.linearRampToValueAtTime(0,t+R_(2.5,4.5));
+    rm.connect(g);send(g,.25,.7);a.start(t);b.start(t);a.stop(t+4.6);b.stop(t+4.6)}};
+const W=[['glitch',4],['blip',3],['crackle',3],['crush',2],['sub',1.5],['ring',1.2]];const WT=W.reduce((s,x)=>s+x[1],0);
+function evento(){if(!playing)return;let r=Math.random()*WT,k='glitch';for(const [n,w] of W){if((r-=w)<0){k=n;break}}
+  EVENTS[k]();energy=Math.min(1,energy+(k==='sub'?.6:.35));blooms.push({x:OW*(.1+Math.random()*.8),y:OH*(.3+Math.random()*.45),r:4,a:.8});
+  timer=setTimeout(evento,Math.random()<.25?R_(60,180):R_(350,1600))}
+function start(){ac.resume();const t=ac.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(.8,t+1.5);drones();timer=setTimeout(evento,1200)}
+function stop(){clearTimeout(timer);const t=ac.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(0,t+1.2);
+  const vs=voices;voices=[];setTimeout(()=>vs.forEach(v=>{try{v.stop()}catch(e){}}),1400)}
+$('#escucha').addEventListener('click',e=>{const b=e.currentTarget;
+  try{if(!ac)setup()}catch(err){toast(lang==='es'?'Tu navegador no permite sonido aquí.':'Your browser does not allow sound here.');return}
+  playing=!playing;b.setAttribute('aria-pressed',playing);playing?start():stop()});
+})();
+</script>
+</body>
+</html>

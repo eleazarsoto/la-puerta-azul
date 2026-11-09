@@ -1,6 +1,3 @@
-# la-puerta-azul
-Sitio web.
-
 # La Puerta Azul · Sitio web
 
 Sitio oficial de **La Puerta Azul**, espacio de residencia artística y creación sonora en Ajijic, Jalisco. Forma parte del **Ecosistema Sensorial** de Laboratorio Sensorial A.C.
